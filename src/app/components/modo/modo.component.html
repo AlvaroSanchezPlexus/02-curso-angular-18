@@ -1,0 +1,17 @@
+<div class="mode-lab" [class]="'theme-' + modo">
+  <select [(ngModel)]="modo">
+    <option value="claro">Modo Claro</option>
+    <option value="oscuro">Modo Oscuro</option>
+    <option value="automático">Automático</option>
+  </select>
+
+  <div class="message-box">
+    @switch (modo) { @case ('claro') {
+    <p>Brillo máximo para trabajar de día. ☀️</p>
+    } @case ('oscuro') {
+    <p>Ideal para descansar la vista. 🌙</p>
+    } @default {
+    <p>El sistema decidirá por ti. 🤖</p>
+    } }
+  </div>
+</div>

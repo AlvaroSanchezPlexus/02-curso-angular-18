@@ -1,0 +1,19 @@
+<div class="gallery-lab">
+  <div class="filters">
+    <button (click)="filtro = 'Todas'">Todas</button>
+    <button (click)="filtro = 'Naturaleza'">Naturaleza</button>
+    <button (click)="filtro = 'Arquitectura'">Arquitectura</button>
+  </div>
+
+  <div class="grid">
+    @for (img of filtradas; track img.id) {
+    <div class="img-card">
+      <img [src]="img.url" />
+      <span class="index-tag">#{{ $index + 1 }}</span>
+      <small>{{ img.cat }}</small>
+    </div>
+    } @empty {
+    <p>No hay imágenes en esta categoría. 🖼️</p>
+    }
+  </div>
+</div>

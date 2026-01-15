@@ -1,0 +1,36 @@
+.mode-lab {
+    padding: 2rem;
+    border-radius: 20px;
+    transition: all 0.4s ease;
+
+    select {
+        width: 100%;
+        padding: 12px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        font-weight: 600;
+    }
+
+    .message-box {
+        padding: 2rem;
+        border-radius: 15px;
+        text-align: center;
+        font-weight: 700;
+        border: 2px dashed var(--border-color);
+    }
+
+    &.theme-claro {
+        background: #ffffff;
+        color: #1e293b;
+    }
+
+    &.theme-oscuro {
+        background: #1e293b;
+        color: #ffffff;
+    }
+
+    &.theme-automático {
+        background: linear-gradient(135deg, #ffffff, #1e293b);
+        color: #3b82f6;
+    }
+}

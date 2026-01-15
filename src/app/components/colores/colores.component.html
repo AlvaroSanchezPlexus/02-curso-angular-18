@@ -1,0 +1,13 @@
+<div class="color-container">
+  <div class="picker-side">
+    <input type="color" [(ngModel)]="colorElegido" />
+  </div>
+
+  <div class="info-side">
+    <h2 [style.color]="colorElegido">Muestra de Color</h2>
+    <p style="margin: 0; color: var(--text-muted)">
+      Selecciona un tono para ver su código hexadecimal:
+    </p>
+    <div class="hex-pill">{{ colorElegido }}</div>
+  </div>
+</div>

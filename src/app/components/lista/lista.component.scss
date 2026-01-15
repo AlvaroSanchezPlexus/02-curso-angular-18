@@ -1,0 +1,45 @@
+.todo-card {
+    .input-box {
+        display: flex;
+        background: #f8fafc;
+        padding: 8px;
+        border-radius: 16px;
+        border: 1px solid var(--border-color);
+        margin-bottom: 2rem;
+
+        input {
+            flex: 1;
+            border: none;
+            background: transparent;
+            padding: 10px 15px;
+            outline: none;
+        }
+
+        button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+    }
+
+    .task-item {
+        background: var(--bg-app);
+        margin-bottom: 12px;
+        padding: 1rem;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        transition: 0.3s;
+        border-left: 4px solid var(--primary);
+
+        &:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+    }
+}

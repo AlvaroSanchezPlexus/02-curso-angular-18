@@ -1,0 +1,20 @@
+<div class="calc-pro">
+  <div class="screen">
+    <input type="number" [(ngModel)]="num1" placeholder="0" />
+    <input type="number" [(ngModel)]="num2" placeholder="0" />
+    <div class="res-val">{{ resultado }}</div>
+  </div>
+
+  <div class="grid-btns">
+    <button (click)="operar('+')" class="op">+</button>
+    <button (click)="operar('-')" class="op">-</button>
+    <button (click)="operar('*')" class="op">×</button>
+    <button (click)="operar('/')" class="op">÷</button>
+    <button
+      (click)="num1 = 0; num2 = 0; resultado = 0"
+      style="grid-column: span 4; font-size: 0.9rem; height: 40px"
+    >
+      Reiniciar
+    </button>
+  </div>
+</div>

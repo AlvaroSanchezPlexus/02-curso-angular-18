@@ -1,3 +1,35 @@
-<h1>{{ title }}</h1>
+<div class="app-container">
+  <app-header></app-header>
+  <app-navbar></app-navbar>
 
-<app-header />
+  <div class="main-layout">
+    <aside class="sidebar">
+      <h4
+        style="
+          color: var(--text-muted);
+          font-size: 0.8rem;
+          text-transform: uppercase;
+          margin-bottom: 1rem;
+        "
+      >
+        Catálogo
+      </h4>
+      <app-card
+        *ngFor="let ex of ejercicios"
+        [titulo]="ex.titulo"
+        [desc]="ex.desc"
+        [ruta]="ex.ruta"
+      >
+      </app-card>
+    </aside>
+
+    <main class="content-viewport">
+      <div class="view-wrapper">
+        <div class="lab-title">Laboratorio de Pruebas</div>
+        <router-outlet />
+      </div>
+    </main>
+  </div>
+
+  <app-footer></app-footer>
+</div>

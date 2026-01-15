@@ -1,0 +1,39 @@
+<div class="counter-box">
+  <button
+    (click)="contar()"
+    [disabled]="clicks >= 10"
+    class="circle-btn"
+    [class.warning]="clicks >= 5 && clicks < 10"
+    [class.danger]="clicks >= 10"
+  >
+    {{ clicks }}
+  </button>
+
+  <div
+    class="status-msg"
+    [ngClass]="{ warning: clicks >= 5, danger: clicks >= 10 }"
+  >
+    @if (clicks < 5) {
+    <p>¡Sigue haciendo click!</p>
+    } @else if (clicks >= 5 && clicks < 10) {
+    <p>¡Te acercas al límite!</p>
+    } @else {
+    <p>¡Botón bloqueado por seguridad!</p>
+    }
+  </div>
+
+  <button
+    (click)="clicks = 0"
+    style="
+      margin-top: 20px;
+      background: none;
+      border: 1px solid var(--border-color);
+      padding: 5px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      color: var(--text-muted);
+    "
+  >
+    Resetear contador
+  </button>
+</div>

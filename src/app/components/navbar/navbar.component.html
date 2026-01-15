@@ -1,0 +1,19 @@
+<nav class="nav-container">
+  <div class="logo">Angular Lab</div>
+  <ul class="nav-links">
+    <li>
+      <a
+        routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Inicio</a
+      >
+    </li>
+    <li>
+      <a routerLink="/calculadora" routerLinkActive="active">Calculadora</a>
+    </li>
+    <li><a routerLink="/lista" routerLinkActive="active">Tareas</a></li>
+    <li><a routerLink="/colores" routerLinkActive="active">Colores</a></li>
+    <li><a routerLink="/contador" routerLinkActive="active">Contador</a></li>
+  </ul>
+</nav>

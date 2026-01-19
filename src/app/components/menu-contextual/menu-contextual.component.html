@@ -1,1 +1,10 @@
-<p>menu-contextual works!</p>
+<div class="area" (contextmenu)="handleContextMenu($event)">
+  Haz click derecho en este recuadro
+
+  @if (mostrarMenu) {
+    <ul class="menu">
+      <li (click)="handleOpcion('Perfil')">Ir al Perfil</li>
+      <li (click)="handleOpcion('Ajustes')">Ajustes</li>
+    </ul>
+  }
+</div>

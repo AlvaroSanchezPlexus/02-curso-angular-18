@@ -1,9 +1,7 @@
 import {
   Component,
-  effect,
   EventEmitter,
   inject,
-  input,
   Input,
   OnInit,
   output,
@@ -28,19 +26,19 @@ export class CardComponent implements OnInit {
   @Output() CardClick = new EventEmitter<void>();
 
   // Using Angular's new input() function for strongly typed inputs
-  public documentId = input.required<string>();
-  public description = input.required<string>();
-  public route = input.required<string>();
+  // public documentId = input.required<string>();
+  // public description = input.required<string>();
+  // public route = input.required<string>();
   public CardClick2 = output();
 
   public name = this.demoService.name;
 
-  constructor() {
-    effect(() => {
-      const documentId = this.documentId();
-      this.getDocuments(documentId);
-    });
-  }
+  // constructor() {
+  //   effect(() => {
+  //     const documentId = this.documentId();
+  //     this.getDocuments(documentId);
+  //   });
+  // }
 
   ngOnInit(): void {
     this.getDocuments();

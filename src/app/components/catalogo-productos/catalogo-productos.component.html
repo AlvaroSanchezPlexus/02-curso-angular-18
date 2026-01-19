@@ -1,1 +1,11 @@
-<p>catalogo-productos works!</p>
+<div class="catalogo">
+  @for (prod of productos; track prod.nombre) {
+    <app-tarjeta-producto
+      [nombre]="prod.nombre"
+      [precio]="prod.precio"
+      [imagen]="prod.imagen"
+      [disponible]="prod.disponible"
+      (deleteItemHijo)="deleteProducto(prod.nombre)"
+    />
+  }
+</div>

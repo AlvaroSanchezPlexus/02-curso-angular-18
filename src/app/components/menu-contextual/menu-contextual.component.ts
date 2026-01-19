@@ -4,22 +4,6 @@ import { Component, HostListener } from '@angular/core';
   selector: 'app-menu-contextual',
   standalone: true,
   imports: [],
-  template: `
-    <div class="area" (contextmenu)="handleContextMenu($event)">
-      Haz click derecho en este recuadro
-
-      @if (mostrarMenu) {
-        <ul
-          class="menu"
-          [style.top.px]="posicion.y"
-          [style.left.px]="posicion.x"
-        >
-          <li (click)="handleOpcion('Perfil')">Ir al Perfil</li>
-          <li (click)="handleOpcion('Ajustes')">Ajustes</li>
-        </ul>
-      }
-    </div>
-  `,
   templateUrl: './menu-contextual.component.html',
   styleUrl: './menu-contextual.component.scss',
 })

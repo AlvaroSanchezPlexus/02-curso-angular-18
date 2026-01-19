@@ -1,6 +1,6 @@
 <div class="app-container">
-  <app-header></app-header>
-  <app-navbar></app-navbar>
+  <app-header />
+  <app-navbar />
 
   <div class="main-layout">
     <aside class="sidebar">
@@ -14,13 +14,9 @@
       >
         Catálogo
       </h4>
-      <app-card
-        *ngFor="let ex of ejercicios"
-        [titulo]="ex.titulo"
-        [desc]="ex.desc"
-        [ruta]="ex.ruta"
-      >
-      </app-card>
+      @for (ex of ejercicios; track $index) {
+        <app-card [titulo]="ex.titulo" [desc]="ex.desc" [ruta]="ex.ruta" />
+      }
     </aside>
 
     <main class="content-viewport">
@@ -31,5 +27,5 @@
     </main>
   </div>
 
-  <app-footer></app-footer>
+  <app-footer />
 </div>

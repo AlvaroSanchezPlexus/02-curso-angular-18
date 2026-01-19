@@ -1,0 +1,72 @@
+.form-lab {
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    input,
+    textarea {
+        padding: 0.8rem;
+        border-radius: 10px;
+        border: 2px solid var(--border-color);
+        background: var(--bg-card);
+        color: var(--text-main);
+        transition: border-color 0.3s;
+
+        &:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        &.error {
+            border-color: #ef4444;
+        }
+    }
+
+    small {
+        color: #ef4444;
+        font-weight: 600;
+    }
+
+    .char-count {
+        text-align: right;
+        font-size: 0.8rem;
+        color: var(--text-muted);
+    }
+
+    .btn-group {
+        display: flex;
+        gap: 1rem;
+
+        button[type="submit"] {
+            flex: 2;
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.8rem;
+            border-radius: 10px;
+            cursor: pointer;
+
+            &:disabled {
+                opacity: 0.5;
+                cursor: not-allowed;
+            }
+        }
+
+        button[type="button"] {
+            flex: 1;
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    }
+}

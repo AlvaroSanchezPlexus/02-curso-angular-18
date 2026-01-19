@@ -1,0 +1,25 @@
+<form (submit)="handleSubmit($event)">
+  <div>
+    <input
+      #mailRef
+      (keyup)="handleKeyUpEmail(mailRef.value)"
+      [class.error]="!emailValido"
+      placeholder="Tu Email"
+    />
+    @if (!emailValido) {
+      <small style="color: red">Email no valido</small>
+    }
+  </div>
+
+  <div>
+    <textarea #textoRef placeholder="Escribe aquí..."></textarea>
+    <p>Longitud: {{ textoRef.value.length }} caracteres</p>
+  </div>
+
+  <button type="submit" [disabled]="!emailValido || mailRef.value === ''">
+    Enviar
+  </button>
+  <button type="button" (click)="handleLimpiar(mailRef, textoRef)">
+    Limpiar
+  </button>
+</form>

@@ -1,0 +1,12 @@
+<div (window:keydown)="handleKeyDown($event, valorInput)">
+  <h2>Contador: {{ contador }}</h2>
+
+  <button (click)="handleIncrementar()">Incrementar</button>
+  <button (click)="handleDecrementar()">Decrementar</button>
+
+  <div>
+    <input #valorInput type="number" placeholder="Nuevo valor" />
+    <button (click)="handleSetValor(valorInput)">Establecer</button>
+    <button (click)="handleReset(valorInput)">Reset (R)</button>
+  </div>
+</div>

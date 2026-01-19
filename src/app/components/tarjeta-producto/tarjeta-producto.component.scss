@@ -1,0 +1,49 @@
+.tarjeta-prod {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    padding-bottom: 1rem;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+    }
+
+    h3 {
+        margin: 1rem;
+        font-size: 1.1rem;
+        color: var(--text-main);
+    }
+
+    p {
+        margin: 0 1rem;
+        color: var(--text-muted);
+        font-weight: 600;
+    }
+
+    .badge {
+        display: inline-block;
+        margin: 0.5rem 1rem;
+        padding: 4px 10px;
+        border-radius: 20px;
+        font-size: 0.75rem;
+
+        &.stock {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        &.no-stock {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+    }
+}

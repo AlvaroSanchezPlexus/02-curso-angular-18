@@ -11,6 +11,10 @@ import { ContadorInteractivoComponent } from './components/contador-interactivo/
 import { CatalogoProductosComponent } from './components/catalogo-productos/catalogo-productos.component';
 import { ValidadorComponent } from './components/validador/validador.component';
 import { MenuContextualComponent } from './components/menu-contextual/menu-contextual.component';
+import { RegistroComponent } from './components/registro/registro.component';
+import { FavoritosComponent } from './components/favoritos/favoritos.component';
+import { ConfiguracionComponent } from './components/configuracion/configuracion.component';
+import { TemporizadorComponent } from './components/temporizador/temporizador.component';
 
 export const routes: Routes = [
   { path: 'calculadora', component: CalculadoraComponent },
@@ -25,5 +29,9 @@ export const routes: Routes = [
   { path: 'catalogo', component: CatalogoProductosComponent },
   { path: 'validador', component: ValidadorComponent },
   { path: 'menu-contextual', component: MenuContextualComponent },
+  { path: 'registro', component: RegistroComponent },
+  { path: 'favoritos', component: FavoritosComponent },
+  { path: 'configuracion', component: ConfiguracionComponent },
+  { path: 'temporizador', component: TemporizadorComponent },
   { path: '', redirectTo: 'calculadora', pathMatch: 'full' },
 ];

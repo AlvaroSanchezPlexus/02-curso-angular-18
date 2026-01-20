@@ -66,5 +66,25 @@ export class AppComponent {
       desc: 'Eventos de mouse y preventDefault',
       ruta: '/menu-contextual',
     },
+    {
+      titulo: 'Ejercicio 13',
+      desc: 'Formulario de registro con signals',
+      ruta: '/registro',
+    },
+    {
+      titulo: 'Ejercicio 14',
+      desc: 'Gestión de favoritos con @Input y @Output',
+      ruta: '/favoritos',
+    },
+    {
+      titulo: 'Ejercicio 15',
+      desc: 'Configuración de usuario y two-way binding',
+      ruta: '/configuracion',
+    },
+    {
+      titulo: 'Ejercicio 16',
+      desc: 'Temporizador con ciclo de vida de componentes',
+      ruta: '/temporizador',
+    },
   ];
 }

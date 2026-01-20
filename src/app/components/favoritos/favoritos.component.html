@@ -1,0 +1,33 @@
+<div class="favoritos-container">
+  <header>
+    <h2>Mis Películas ({{ peliculas().length }})</h2>
+    <span class="stats">Vistas: {{ contarVistas() }}</span>
+  </header>
+
+  <div class="add-box">
+    <input #tituloInput placeholder="Título de la película" />
+    <input #anioInput type="number" placeholder="Año" />
+    <button (click)="handleAgregar(tituloInput, anioInput)">Añadir</button>
+  </div>
+
+  <ul class="movie-list">
+    @for (p of peliculas(); track p.id) {
+      <li [class.is-watched]="p.vista">
+        <div class="info">
+          <strong>{{ p.titulo }}</strong>
+          <span>{{ p.anio }}</span>
+        </div>
+        <div class="actions">
+          <button (click)="toggleVista(p.id)" class="btn-view">
+            {{ p.vista ? "Vista" : "Pendiente" }}
+          </button>
+          <button (click)="eliminarPelicula(p.id)" class="btn-delete">
+            🗑️
+          </button>
+        </div>
+      </li>
+    } @empty {
+      <p class="empty">No tienes películas en favoritos.</p>
+    }
+  </ul>
+</div>

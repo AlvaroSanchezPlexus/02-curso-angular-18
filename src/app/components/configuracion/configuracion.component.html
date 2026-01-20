@@ -1,0 +1,30 @@
+<div class="config-wrapper" [class.dark-mode]="config().modo === 'oscuro'">
+  <div
+    class="preview-text"
+    [style.font-size.px]="config().tamano"
+    [style.font-family]="config().fuente"
+  >
+    <h3>Vista Previa de Configuración</h3>
+    <p>Este texto cambia según tus preferencias.</p>
+  </div>
+
+  <div class="controls-grid">
+    <button (click)="cambiarModo()" class="btn-toggle">
+      Cambiar a Modo {{ config().modo === "claro" ? "Oscuro" : "Claro" }}
+    </button>
+
+    <div class="size-controls">
+      <button (click)="ajustarTamano(-2)">-</button>
+      <span>Tamaño: {{ config().tamano }}px</span>
+      <button (click)="ajustarTamano(2)">+</button>
+    </div>
+
+    <select (change)="handleFuente($event)">
+      <option value="Arial">Arial</option>
+      <option value="Verdana">Verdana</option>
+      <option value="Courier New">Courier</option>
+    </select>
+
+    <button (click)="resetear()" class="btn-reset">Valores por defecto</button>
+  </div>
+</div>

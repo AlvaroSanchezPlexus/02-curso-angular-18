@@ -1,0 +1,42 @@
+<div class="registro-container">
+  <div class="card">
+    <h2>Registro de Usuario</h2>
+
+    <div class="form-group">
+      <input
+        [value]="nombre()"
+        (input)="nombre.set($any($event.target).value)"
+        placeholder="Nombre completo"
+      />
+    </div>
+
+    <div class="form-group">
+      <input
+        [value]="email()"
+        (input)="email.set($any($event.target).value)"
+        placeholder="Correo electrónico"
+      />
+    </div>
+
+    <div class="form-group">
+      <input
+        type="password"
+        [value]="password()"
+        (input)="password.set($any($event.target).value)"
+        placeholder="Contraseña"
+      />
+    </div>
+
+    <div class="status-box">
+      @if (esFormularioCompleto()) {
+        <p class="msg-success">✅ Formulario listo para enviar</p>
+      } @else {
+        <p class="msg-error">❌ Debes rellenar todos los campos</p>
+      }
+    </div>
+
+    <div class="actions">
+      <button class="btn-clear" (click)="handleLimpiar()">Limpiar Todo</button>
+    </div>
+  </div>
+</div>

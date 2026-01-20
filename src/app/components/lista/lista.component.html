@@ -3,20 +3,19 @@
     <input
       [(ngModel)]="nuevaTarea"
       (keyup.enter)="agregar()"
-      placeholder="¿Qué tienes pendiente hoy?"
-    />
+      placeholder="¿Qué tienes pendiente hoy?" />
     <button (click)="agregar()">Añadir</button>
   </div>
 
   <div class="task-list">
     @for (t of tareas; track $index) {
-    <div class="task-item">
-      <span>{{ t }}</span>
-    </div>
+      <div class="task-item">
+        <span>{{ t }}</span>
+      </div>
     } @empty {
-    <p style="text-align: center; color: var(--text-muted)">
-      No hay tareas pendientes.
-    </p>
+      <p style="text-align: center; color: var(--text-muted)">
+        No hay tareas pendientes.
+      </p>
     }
   </div>
 </div>

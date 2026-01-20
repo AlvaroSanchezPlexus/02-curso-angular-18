@@ -1,63 +1,63 @@
 .gallery-lab {
-    .filters {
-        display: flex;
-        gap: 10px;
-        margin-bottom: 25px;
+  .filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
 
-        button {
-            padding: 8px 16px;
-            border-radius: 20px;
-            border: 1px solid var(--primary);
-            background: transparent;
-            color: var(--primary);
-            cursor: pointer;
-            font-weight: 600;
-            transition: 0.3s;
+    button {
+      padding: 8px 16px;
+      border-radius: 20px;
+      border: 1px solid var(--primary);
+      background: transparent;
+      color: var(--primary);
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s;
 
-            &:hover {
-                background: var(--primary);
-                color: white;
-            }
-        }
+      &:hover {
+        background: var(--primary);
+        color: white;
+      }
     }
+  }
 
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-        gap: 20px;
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
 
-        .img-card {
-            background: var(--bg-app);
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: var(--card-shadow);
-            position: relative;
+    .img-card {
+      background: var(--bg-app);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      position: relative;
 
-            img {
-                width: 100%;
-                height: 150px;
-                object-fit: cover;
-            }
+      img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+      }
 
-            .index-tag {
-                position: absolute;
-                top: 10px;
-                left: 10px;
-                background: var(--primary);
-                color: white;
-                padding: 4px 8px;
-                border-radius: 8px;
-                font-size: 0.7rem;
-                font-weight: bold;
-            }
+      .index-tag {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: var(--primary);
+        color: white;
+        padding: 4px 8px;
+        border-radius: 8px;
+        font-size: 0.7rem;
+        font-weight: bold;
+      }
 
-            small {
-                display: block;
-                padding: 10px;
-                text-align: center;
-                font-weight: 600;
-                color: var(--text-muted);
-            }
-        }
+      small {
+        display: block;
+        padding: 10px;
+        text-align: center;
+        font-weight: 600;
+        color: var(--text-muted);
+      }
     }
+  }
 }

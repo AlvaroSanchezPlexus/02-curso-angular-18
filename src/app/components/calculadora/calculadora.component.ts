@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [FormsModule],
   templateUrl: './calculadora.component.html',
-  styleUrl: './calculadora.component.scss'
+  styleUrl: './calculadora.component.scss',
 })
 export class CalculadoraComponent {
   num1 = 0;

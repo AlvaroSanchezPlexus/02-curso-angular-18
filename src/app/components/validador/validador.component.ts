@@ -16,7 +16,7 @@ export class ValidadorComponent {
 
   public handleLimpiar(
     inputMail: HTMLInputElement,
-    inputTexto: HTMLTextAreaElement,
+    inputTexto: HTMLTextAreaElement
   ): void {
     inputMail.value = '';
     inputTexto.value = '';

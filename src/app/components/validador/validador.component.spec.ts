@@ -8,9 +8,8 @@ describe('ValidadorComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ValidadorComponent]
-    })
-    .compileComponents();
+      imports: [ValidadorComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ValidadorComponent);
     component = fixture.componentInstance;

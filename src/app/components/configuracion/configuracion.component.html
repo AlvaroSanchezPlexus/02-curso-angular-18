@@ -2,15 +2,14 @@
   <div
     class="preview-text"
     [style.font-size.px]="config().tamano"
-    [style.font-family]="config().fuente"
-  >
+    [style.font-family]="config().fuente">
     <h3>Vista Previa de Configuración</h3>
     <p>Este texto cambia según tus preferencias.</p>
   </div>
 
   <div class="controls-grid">
     <button (click)="cambiarModo()" class="btn-toggle">
-      Cambiar a Modo {{ config().modo === "claro" ? "Oscuro" : "Claro" }}
+      Cambiar a Modo {{ config().modo === 'claro' ? 'Oscuro' : 'Claro' }}
     </button>
 
     <div class="size-controls">

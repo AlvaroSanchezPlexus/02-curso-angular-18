@@ -8,9 +8,8 @@ describe('TemporizadorComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TemporizadorComponent]
-    })
-    .compileComponents();
+      imports: [TemporizadorComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(TemporizadorComponent);
     component = fixture.componentInstance;

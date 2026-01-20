@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [FormsModule],
   templateUrl: './colores.component.html',
-  styleUrl: './colores.component.scss'
+  styleUrl: './colores.component.scss',
 })
 export class ColoresComponent {
   colorElegido = '#3498db';

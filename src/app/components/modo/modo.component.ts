@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [FormsModule],
   templateUrl: './modo.component.html',
-  styleUrl: './modo.component.scss'
+  styleUrl: './modo.component.scss',
 })
 export class ModoComponent {
   modo: 'claro' | 'oscuro' | 'automático' = 'claro';

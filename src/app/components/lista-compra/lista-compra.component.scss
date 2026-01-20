@@ -1,42 +1,42 @@
 .shopping-lab {
-    input {
-        width: 100%;
-        padding: 12px;
-        border: 2px solid var(--border-color);
-        border-radius: 12px;
-        margin-bottom: 20px;
-        background: var(--bg-card);
-        color: var(--text-main);
-    }
+  input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    margin-bottom: 20px;
+    background: var(--bg-card);
+    color: var(--text-main);
+  }
 
-    .item {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        padding: 10px;
-        border-bottom: 1px solid var(--border-color);
+  .item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+    border-bottom: 1px solid var(--border-color);
 
-        input[type="checkbox"] {
-            width: 20px;
-            height: 20px;
-            cursor: pointer;
-        }
+    input[type='checkbox'] {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
     }
+  }
 
-    .empty-msg {
-        text-align: center;
-        padding: 2rem;
-        color: var(--text-muted);
-        font-style: italic;
-    }
+  .empty-msg {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-muted);
+    font-style: italic;
+  }
 
-    .stats {
-        margin-top: 20px;
-        padding: 15px;
-        background: var(--primary);
-        color: white;
-        border-radius: 12px;
-        font-weight: bold;
-        text-align: center;
-    }
+  .stats {
+    margin-top: 20px;
+    padding: 15px;
+    background: var(--primary);
+    color: white;
+    border-radius: 12px;
+    font-weight: bold;
+    text-align: center;
+  }
 }

@@ -1,58 +1,58 @@
 .messages-lab {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  .alert {
     display: flex;
-    flex-direction: column;
-    gap: 12px;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-radius: 16px;
+    border-left: 6px solid;
+    animation: slideIn 0.3s ease;
+    background: var(--bg-app);
 
-    .alert {
-        display: flex;
-        align-items: center;
-        padding: 1rem 1.5rem;
-        border-radius: 16px;
-        border-left: 6px solid;
-        animation: slideIn 0.3s ease;
-        background: var(--bg-app);
-
-        .icon {
-            font-size: 1.5rem;
-            margin-right: 15px;
-        }
-
-        p {
-            margin: 0;
-            flex-grow: 1;
-            font-weight: 500;
-        }
-
-        button {
-            background: rgba(0, 0, 0, 0.05);
-            border: none;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: 0.2s;
-
-            &:hover {
-                background: rgba(0, 0, 0, 0.1);
-            }
-        }
-
-        &.info {
-            border-color: #3b82f6;
-            color: #1e40af;
-            background: #eff6ff;
-        }
-
-        &.warning {
-            border-color: #f59e0b;
-            color: #92400e;
-            background: #fffbeb;
-        }
-
-        &.error {
-            border-color: #ef4444;
-            color: #991b1b;
-            background: #fef2f2;
-        }
+    .icon {
+      font-size: 1.5rem;
+      margin-right: 15px;
     }
+
+    p {
+      margin: 0;
+      flex-grow: 1;
+      font-weight: 500;
+    }
+
+    button {
+      background: rgba(0, 0, 0, 0.05);
+      border: none;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: 0.2s;
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    &.info {
+      border-color: #3b82f6;
+      color: #1e40af;
+      background: #eff6ff;
+    }
+
+    &.warning {
+      border-color: #f59e0b;
+      color: #92400e;
+      background: #fffbeb;
+    }
+
+    &.error {
+      border-color: #ef4444;
+      color: #991b1b;
+      background: #fef2f2;
+    }
+  }
 }

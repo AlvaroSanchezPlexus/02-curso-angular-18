@@ -1,39 +1,39 @@
 .color-container {
-    display: flex;
-    align-items: center;
-    gap: 40px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
 
-    .picker-side {
-        input[type="color"] {
-            width: 150px;
-            height: 150px;
-            border: none;
-            cursor: pointer;
-            border-radius: 50%;
-            overflow: hidden;
+  .picker-side {
+    input[type='color'] {
+      width: 150px;
+      height: 150px;
+      border: none;
+      cursor: pointer;
+      border-radius: 50%;
+      overflow: hidden;
 
-            &::-webkit-color-swatch {
-                border: 8px solid white;
-                border-radius: 50%;
-                box-shadow: var(--card-shadow);
-            }
-        }
+      &::-webkit-color-swatch {
+        border: 8px solid white;
+        border-radius: 50%;
+        box-shadow: var(--card-shadow);
+      }
+    }
+  }
+
+  .info-side {
+    h2 {
+      font-size: 2rem;
+      margin: 0;
     }
 
-    .info-side {
-        h2 {
-            font-size: 2rem;
-            margin: 0;
-        }
-
-        .hex-pill {
-            background: var(--text-main);
-            color: white;
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-family: monospace;
-            margin-top: 15px;
-            display: inline-block;
-        }
+    .hex-pill {
+      background: var(--text-main);
+      color: white;
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-family: monospace;
+      margin-top: 15px;
+      display: inline-block;
     }
+  }
 }

@@ -1,4 +1,4 @@
-import { Component, WritableSignal, signal } from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
 interface Pelicula {
   id: number;
   titulo: string;
@@ -15,7 +15,11 @@ interface Pelicula {
 })
 export class FavoritosComponent {
   // Signal para la lista de películas con tipado estricto
-  public peliculas: WritableSignal<Pelicula[]> = signal<Pelicula[]>([]);
+  public peliculas = signal<Pelicula[]>([]);
+
+  public contarVistas = computed<number>(
+    () => this.peliculas().filter((p: Pelicula) => p.vista).length
+  );
 
   private siguienteId = 1;
 
@@ -26,7 +30,7 @@ export class FavoritosComponent {
    */
   public handleAgregar(
     tituloInput: HTMLInputElement,
-    anioInput: HTMLInputElement,
+    anioInput: HTMLInputElement
   ): void {
     const titulo: string = tituloInput.value.trim();
     const anio: number = parseInt(anioInput.value);
@@ -51,17 +55,13 @@ export class FavoritosComponent {
 
   public eliminarPelicula(id: number): void {
     this.peliculas.update((lista: Pelicula[]) =>
-      lista.filter((p: Pelicula) => p.id !== id),
+      lista.filter((p: Pelicula) => p.id !== id)
     );
   }
 
   public toggleVista(id: number): void {
     this.peliculas.update((lista: Pelicula[]) =>
-      lista.map((p: Pelicula) => (p.id === id ? { ...p, vista: !p.vista } : p)),
+      lista.map((p: Pelicula) => (p.id === id ? { ...p, vista: !p.vista } : p))
     );
-  }
-
-  public contarVistas(): number {
-    return this.peliculas().filter((p: Pelicula) => p.vista).length;
   }
 }

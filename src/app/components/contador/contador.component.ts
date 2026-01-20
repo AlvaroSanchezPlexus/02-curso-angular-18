@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [FormsModule, CommonModule],
   templateUrl: './contador.component.html',
-  styleUrl: './contador.component.scss'
+  styleUrl: './contador.component.scss',
 })
 export class ContadorComponent {
   clicks = 0;

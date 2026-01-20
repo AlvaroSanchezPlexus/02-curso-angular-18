@@ -2,19 +2,18 @@
   <input
     [(ngModel)]="nuevoArticulo"
     (keyup.enter)="agregar()"
-    placeholder="Ej: Manzanas"
-  />
+    placeholder="Ej: Manzanas" />
 
   <div class="list">
     @for (item of articulos; track $index) {
-    <div class="item">
-      <input type="checkbox" [(ngModel)]="item.comprado" />
-      <span [style.text-decoration]="item.comprado ? 'line-through' : 'none'">
-        {{ item.nombre }}
-      </span>
-    </div>
+      <div class="item">
+        <input type="checkbox" [(ngModel)]="item.comprado" />
+        <span [style.text-decoration]="item.comprado ? 'line-through' : 'none'">
+          {{ item.nombre }}
+        </span>
+      </div>
     } @empty {
-    <p class="empty-msg">🛒 Lista vacía. ¡Añade algo!</p>
+      <p class="empty-msg">🛒 Lista vacía. ¡Añade algo!</p>
     }
   </div>
 

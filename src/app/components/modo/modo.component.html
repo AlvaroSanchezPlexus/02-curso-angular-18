@@ -6,12 +6,16 @@
   </select>
 
   <div class="message-box">
-    @switch (modo) { @case ('claro') {
-    <p>Brillo máximo para trabajar de día. ☀️</p>
-    } @case ('oscuro') {
-    <p>Ideal para descansar la vista. 🌙</p>
-    } @default {
-    <p>El sistema decidirá por ti. 🤖</p>
-    } }
+    @switch (modo) {
+      @case ('claro') {
+        <p>Brillo máximo para trabajar de día. ☀️</p>
+      }
+      @case ('oscuro') {
+        <p>Ideal para descansar la vista. 🌙</p>
+      }
+      @default {
+        <p>El sistema decidirá por ti. 🤖</p>
+      }
+    }
   </div>
 </div>

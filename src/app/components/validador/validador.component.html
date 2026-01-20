@@ -4,8 +4,7 @@
       #mailRef
       (keyup)="handleKeyUpEmail(mailRef.value)"
       [class.error]="!emailValido"
-      placeholder="Tu Email"
-    />
+      placeholder="Tu Email" />
     @if (!emailValido) {
       <small style="color: red">Email no valido</small>
     }

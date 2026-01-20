@@ -179,14 +179,14 @@ Un componente es una pieza independiente de la UI. En Angular 18, los componente
 Estructura básica:
 
 ```typescript
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
 
 @Component({
-  selector: "app-mi-componente", // Cómo se usa en HTML
+  selector: 'app-mi-componente', // Cómo se usa en HTML
   standalone: true, // No necesita módulo
   imports: [], // Dependencias que necesita
-  templateUrl: "./mi-componente.component.html",
-  styleUrl: "./mi-componente.component.css",
+  templateUrl: './mi-componente.component.html',
+  styleUrl: './mi-componente.component.css',
 })
 export class MiComponenteComponent {
   // Lógica del componente
@@ -223,22 +223,22 @@ src/app/components/header/
 
 ```typescript
 // header.component.ts
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
 
 @Component({
-  selector: "app-header",
+  selector: 'app-header',
   standalone: true,
   imports: [],
-  templateUrl: "./header.component.html",
-  styleUrl: "./header.component.css",
+  templateUrl: './header.component.html',
+  styleUrl: './header.component.css',
 })
 export class HeaderComponent {
   // Propiedades
-  titulo = "Mi Aplicación";
+  titulo = 'Mi Aplicación';
 
   // Métodos
   saludar() {
-    console.log("¡Hola desde el header!");
+    console.log('¡Hola desde el header!');
   }
 }
 ```
@@ -247,18 +247,18 @@ export class HeaderComponent {
 
 ```typescript
 // app.component.ts
-import { Component } from "@angular/core";
-import { HeaderComponent } from "./components/header/header.component";
+import { Component } from '@angular/core';
+import { HeaderComponent } from './components/header/header.component';
 
 @Component({
-  selector: "app-root",
+  selector: 'app-root',
   standalone: true,
   imports: [HeaderComponent], // 👈 Importar componente
-  templateUrl: "./app.component.html",
-  styleUrl: "./app.component.css",
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = "mi-primera-app";
+  title = 'mi-primera-app';
 }
 ```
 
@@ -300,9 +300,9 @@ export class AppComponent {
 2. **Estructura**: En `card.component.ts`, añade propiedades:
 
    ```typescript
-   titulo = "Tarjeta de ejemplo";
-   descripcion = "Esta es una descripción";
-   imagen = "https://via.placeholder.com/150";
+   titulo = 'Tarjeta de ejemplo';
+   descripcion = 'Esta es una descripción';
+   imagen = 'https://via.placeholder.com/150';
    ```
 
 3. **Usar componentes**: En `app.component.html`, usa todos los componentes creados:
@@ -355,7 +355,7 @@ src/app/
 ```typescript
 // user.component.ts
 export class UserComponent {
-  nombre = "Ana García";
+  nombre = 'Ana García';
   edad = 25;
   estaActivo = true;
 
@@ -381,8 +381,8 @@ export class UserComponent {
 
 ```typescript
 export class ImagenComponent {
-  urlImagen = "https://via.placeholder.com/200";
-  textoAlt = "Imagen de ejemplo";
+  urlImagen = 'https://via.placeholder.com/200';
+  textoAlt = 'Imagen de ejemplo';
   estaDeshabilitado = false;
 }
 ```
@@ -422,7 +422,7 @@ export class ContadorComponent {
 
   manejarInput(event: Event) {
     const valor = (event.target as HTMLInputElement).value;
-    console.log("Input:", valor);
+    console.log('Input:', valor);
   }
 }
 ```
@@ -438,25 +438,27 @@ export class ContadorComponent {
 
 <!-- Otros eventos -->
 <input (input)="manejarInput($event)" placeholder="Escribe algo" />
-<div (mouseenter)="handleMouseEnter()" (mouseleave)="handleMouseLeave()">Pasa el ratón aquí</div>
+<div (mouseenter)="handleMouseEnter()" (mouseleave)="handleMouseLeave()">
+  Pasa el ratón aquí
+</div>
 ```
 
 **Paso 4: Two-way Binding**
 
 ```typescript
 // Necesitas importar FormsModule
-import { Component } from "@angular/core";
-import { FormsModule } from "@angular/forms";
+import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: "app-formulario",
+  selector: 'app-formulario',
   standalone: true,
   imports: [FormsModule], // 👈 Importante
-  templateUrl: "./formulario.component.html",
+  templateUrl: './formulario.component.html',
 })
 export class FormularioComponent {
-  nombreUsuario = "";
-  email = "";
+  nombreUsuario = '';
+  email = '';
 }
 ```
 
@@ -479,22 +481,22 @@ export class FormularioComponent {
 
 ```typescript
 // profile.component.ts
-import { Component } from "@angular/core";
-import { FormsModule } from "@angular/forms";
+import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: "app-profile",
+  selector: 'app-profile',
   standalone: true,
   imports: [FormsModule],
-  templateUrl: "./profile.component.html",
-  styleUrl: "./profile.component.css",
+  templateUrl: './profile.component.html',
+  styleUrl: './profile.component.css',
 })
 export class ProfileComponent {
   // Datos del usuario
-  nombre = "Usuario";
+  nombre = 'Usuario';
   edad = 0;
-  biografia = "";
-  imagenPerfil = "https://via.placeholder.com/100";
+  biografia = '';
+  imagenPerfil = 'https://via.placeholder.com/100';
 
   // Estados
   modoEdicion = false;
@@ -506,7 +508,7 @@ export class ProfileComponent {
 
   guardarCambios() {
     this.modoEdicion = false;
-    console.log("Perfil guardado:", {
+    console.log('Perfil guardado:', {
       nombre: this.nombre,
       edad: this.edad,
       biografia: this.biografia,
@@ -599,7 +601,7 @@ Angular 18 introduce **nuevas directivas de control de flujo** más legibles y c
 // auth.component.ts
 export class AuthComponent {
   usuarioLogueado = false;
-  nombreUsuario = "Ana";
+  nombreUsuario = 'Ana';
 
   login() {
     this.usuarioLogueado = true;
@@ -630,12 +632,12 @@ export class AuthComponent {
 
 ```typescript
 export class EstadoComponent {
-  estado: "cargando" | "exitoso" | "error" | null = null;
+  estado: 'cargando' | 'exitoso' | 'error' | null = null;
 
   cargar() {
-    this.estado = "cargando";
+    this.estado = 'cargando';
     setTimeout(() => {
-      this.estado = Math.random() > 0.5 ? "exitoso" : "error";
+      this.estado = Math.random() > 0.5 ? 'exitoso' : 'error';
     }, 2000);
   }
 }
@@ -660,13 +662,13 @@ export class EstadoComponent {
 // lista-tareas.component.ts
 export class ListaTareasComponent {
   tareas = [
-    { id: 1, texto: "Aprender Angular", completada: false },
-    { id: 2, texto: "Crear componentes", completada: true },
-    { id: 3, texto: "Dominar directivas", completada: false },
+    { id: 1, texto: 'Aprender Angular', completada: false },
+    { id: 2, texto: 'Crear componentes', completada: true },
+    { id: 3, texto: 'Dominar directivas', completada: false },
   ];
 
   toggleTarea(id: number) {
-    const tarea = this.tareas.find((t) => t.id === id);
+    const tarea = this.tareas.find(t => t.id === id);
     if (tarea) {
       tarea.completada = !tarea.completada;
     }
@@ -679,7 +681,10 @@ export class ListaTareasComponent {
 <ul>
   @for (tarea of tareas; track tarea.id) {
   <li [class.completada]="tarea.completada">
-    <input type="checkbox" [checked]="tarea.completada" (change)="toggleTarea(tarea.id)" />
+    <input
+      type="checkbox"
+      [checked]="tarea.completada"
+      (change)="toggleTarea(tarea.id)" />
     {{ tarea.texto }}
   </li>
   }
@@ -697,9 +702,9 @@ export class ListaTareasComponent {
 ```typescript
 export class ProductosComponent {
   productos = [
-    { id: 1, nombre: "Laptop", precio: 999 },
-    { id: 2, nombre: "Mouse", precio: 25 },
-    { id: 3, nombre: "Teclado", precio: 75 },
+    { id: 1, nombre: 'Laptop', precio: 999 },
+    { id: 2, nombre: 'Mouse', precio: 25 },
+    { id: 3, nombre: 'Teclado', precio: 75 },
   ];
 }
 ```
@@ -738,9 +743,9 @@ export class ProductosComponent {
 
 ```typescript
 export class PlanComponent {
-  planSeleccionado: "basico" | "premium" | "enterprise" = "basico";
+  planSeleccionado: 'basico' | 'premium' | 'enterprise' = 'basico';
 
-  seleccionarPlan(plan: "basico" | "premium" | "enterprise") {
+  seleccionarPlan(plan: 'basico' | 'premium' | 'enterprise') {
     this.planSeleccionado = plan;
   }
 }
@@ -793,15 +798,17 @@ export class PlanComponent {
 ```typescript
 export class DashboardComponent {
   usuarios = [
-    { id: 1, nombre: "Ana", rol: "admin", activo: true },
-    { id: 2, nombre: "Luis", rol: "user", activo: false },
-    { id: 3, nombre: "María", rol: "moderador", activo: true },
+    { id: 1, nombre: 'Ana', rol: 'admin', activo: true },
+    { id: 2, nombre: 'Luis', rol: 'user', activo: false },
+    { id: 3, nombre: 'María', rol: 'moderador', activo: true },
   ];
 
   filtroActivos = true;
 
   get usuariosFiltrados() {
-    return this.filtroActivos ? this.usuarios.filter((u) => u.activo) : this.usuarios;
+    return this.filtroActivos
+      ? this.usuarios.filter(u => u.activo)
+      : this.usuarios;
   }
 }
 ```
@@ -897,16 +904,16 @@ Permite que un componente padre pase datos a un componente hijo (lo veremos en p
 ```typescript
 // eventos.component.ts
 export class EventosComponent {
-  mensaje = "";
+  mensaje = '';
   posicionMouse = { x: 0, y: 0 };
-  textoCopiado = "";
+  textoCopiado = '';
 
   handleClick() {
-    this.mensaje = "Botón clickeado!";
+    this.mensaje = 'Botón clickeado!';
   }
 
   handleDoubleClick() {
-    this.mensaje = "Doble click detectado!";
+    this.mensaje = 'Doble click detectado!';
   }
 
   handleMouseMove(event: MouseEvent) {
@@ -917,13 +924,13 @@ export class EventosComponent {
   }
 
   handleCopy(event: ClipboardEvent) {
-    this.textoCopiado = "Texto copiado al portapapeles";
-    setTimeout(() => (this.textoCopiado = ""), 2000);
+    this.textoCopiado = 'Texto copiado al portapapeles';
+    setTimeout(() => (this.textoCopiado = ''), 2000);
   }
 
   handleKeydown(event: KeyboardEvent) {
-    if (event.key === "Enter") {
-      console.log("Enter presionado");
+    if (event.key === 'Enter') {
+      console.log('Enter presionado');
     }
   }
 }
@@ -957,7 +964,7 @@ export class EventosComponent {
 ```typescript
 // formulario-avanzado.component.ts
 export class FormularioAvanzadoComponent {
-  resultado = "";
+  resultado = '';
 
   procesar(valor: string) {
     this.resultado = `Procesado: ${valor}`;
@@ -969,7 +976,7 @@ export class FormularioAvanzadoComponent {
   }
 
   limpiarInput(input: HTMLInputElement) {
-    input.value = "";
+    input.value = '';
     input.focus();
   }
 }
@@ -1002,16 +1009,16 @@ export class FormularioAvanzadoComponent {
 
 ```typescript
 export class FormularioComponent {
-  datos = { nombre: "", email: "" };
+  datos = { nombre: '', email: '' };
 
   enviarFormulario(event: Event) {
     event.preventDefault(); // Prevenir recarga de página
-    console.log("Formulario enviado:", this.datos);
+    console.log('Formulario enviado:', this.datos);
   }
 
   handleContextMenu(event: MouseEvent) {
     event.preventDefault(); // Prevenir menú contextual
-    console.log("Click derecho bloqueado");
+    console.log('Click derecho bloqueado');
   }
 }
 ```
@@ -1024,14 +1031,16 @@ export class FormularioComponent {
   <button type="submit">Enviar</button>
 </form>
 
-<div (contextmenu)="handleContextMenu($event)">Click derecho deshabilitado aquí</div>
+<div (contextmenu)="handleContextMenu($event)">
+  Click derecho deshabilitado aquí
+</div>
 ```
 
 **Paso 4: Comunicación Padre-Hijo con @Input**
 
 ```typescript
 // Componente Hijo: tarjeta-usuario.component.ts
-import { Component, Input } from "@angular/core";
+import { Component, Input } from '@angular/core';
 
 interface Usuario {
   nombre: string;
@@ -1040,7 +1049,7 @@ interface Usuario {
 }
 
 @Component({
-  selector: "app-tarjeta-usuario",
+  selector: 'app-tarjeta-usuario',
   standalone: true,
   template: `
     <div class="tarjeta">
@@ -1078,11 +1087,11 @@ export class TarjetaUsuarioComponent {
 
 ```typescript
 // Componente Padre: lista-usuarios.component.ts
-import { Component } from "@angular/core";
-import { TarjetaUsuarioComponent } from "./tarjeta-usuario.component";
+import { Component } from '@angular/core';
+import { TarjetaUsuarioComponent } from './tarjeta-usuario.component';
 
 @Component({
-  selector: "app-lista-usuarios",
+  selector: 'app-lista-usuarios',
   standalone: true,
   imports: [TarjetaUsuarioComponent],
   template: `
@@ -1090,7 +1099,8 @@ import { TarjetaUsuarioComponent } from "./tarjeta-usuario.component";
       <h2>Lista de Usuarios</h2>
 
       @for (user of usuarios; track user.email) {
-        <app-tarjeta-usuario [usuario]="user" [mostrarDetalles]="true"> </app-tarjeta-usuario>
+        <app-tarjeta-usuario [usuario]="user" [mostrarDetalles]="true">
+        </app-tarjeta-usuario>
       }
     </div>
   `,
@@ -1098,19 +1108,19 @@ import { TarjetaUsuarioComponent } from "./tarjeta-usuario.component";
 export class ListaUsuariosComponent {
   usuarios = [
     {
-      nombre: "Ana García",
-      email: "ana@example.com",
-      avatar: "https://i.pravatar.cc/150?img=1",
+      nombre: 'Ana García',
+      email: 'ana@example.com',
+      avatar: 'https://i.pravatar.cc/150?img=1',
     },
     {
-      nombre: "Luis Martínez",
-      email: "luis@example.com",
-      avatar: "https://i.pravatar.cc/150?img=2",
+      nombre: 'Luis Martínez',
+      email: 'luis@example.com',
+      avatar: 'https://i.pravatar.cc/150?img=2',
     },
     {
-      nombre: "María López",
-      email: "maria@example.com",
-      avatar: "https://i.pravatar.cc/150?img=3",
+      nombre: 'María López',
+      email: 'maria@example.com',
+      avatar: 'https://i.pravatar.cc/150?img=3',
     },
   ];
 }
@@ -1120,10 +1130,10 @@ export class ListaUsuariosComponent {
 
 ```typescript
 // boton.component.ts
-import { Component, Input } from "@angular/core";
+import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: "app-boton",
+  selector: 'app-boton',
   standalone: true,
   template: `
     <button [class]="'btn btn-' + tipo" [disabled]="deshabilitado">
@@ -1158,19 +1168,19 @@ import { Component, Input } from "@angular/core";
   ],
 })
 export class BotonComponent {
-  @Input() texto = "Click aquí"; // Valor por defecto
-  @Input() tipo: "primary" | "secondary" | "danger" = "primary";
+  @Input() texto = 'Click aquí'; // Valor por defecto
+  @Input() tipo: 'primary' | 'secondary' | 'danger' = 'primary';
   @Input() deshabilitado = false;
 }
 ```
 
 ```typescript
 // uso del componente
-import { Component } from "@angular/core";
-import { BotonComponent } from "./boton.component";
+import { Component } from '@angular/core';
+import { BotonComponent } from './boton.component';
 
 @Component({
-  selector: "app-panel",
+  selector: 'app-panel',
   standalone: true,
   imports: [BotonComponent],
   template: `
@@ -1183,7 +1193,8 @@ import { BotonComponent } from "./boton.component";
 
       <app-boton texto="Cancelar" tipo="secondary"> </app-boton>
 
-      <app-boton texto="Eliminar" tipo="danger" [deshabilitado]="true"> </app-boton>
+      <app-boton texto="Eliminar" tipo="danger" [deshabilitado]="true">
+      </app-boton>
     </div>
   `,
 })
@@ -1195,16 +1206,16 @@ export class PanelComponent {}
 ```typescript
 export class BubblingComponent {
   handlePadreClick() {
-    console.log("Click en contenedor padre");
+    console.log('Click en contenedor padre');
   }
 
   handleHijoClick(event: Event) {
     event.stopPropagation(); // Detiene la propagación
-    console.log("Click en hijo - no se propaga al padre");
+    console.log('Click en hijo - no se propaga al padre');
   }
 
   handleNormalClick() {
-    console.log("Click normal - se propaga");
+    console.log('Click normal - se propaga');
   }
 }
 ```
@@ -1288,7 +1299,7 @@ Signals son el nuevo sistema de reactividad de Angular 18. Son contenedores de v
 **Anatomía básica:**
 
 ```typescript
-import { signal } from "@angular/core";
+import { signal } from '@angular/core';
 
 // Crear signal
 contador = signal(0);
@@ -1298,7 +1309,7 @@ const valor = this.contador();
 
 // Actualizar signal
 this.contador.set(5); // Establecer valor
-this.contador.update((v) => v + 1); // Actualizar basado en valor anterior
+this.contador.update(v => v + 1); // Actualizar basado en valor anterior
 ```
 
 ### 🛠️ Práctica Guiada
@@ -1307,10 +1318,10 @@ this.contador.update((v) => v + 1); // Actualizar basado en valor anterior
 
 ```typescript
 // contador-signal.component.ts
-import { Component, signal } from "@angular/core";
+import { Component, signal } from '@angular/core';
 
 @Component({
-  selector: "app-contador-signal",
+  selector: 'app-contador-signal',
   standalone: true,
   template: `
     <div class="contador">
@@ -1340,11 +1351,11 @@ export class ContadorSignalComponent {
 
   incrementar() {
     // update: recibe función con valor actual
-    this.contador.update((valor) => valor + 1);
+    this.contador.update(valor => valor + 1);
   }
 
   decrementar() {
-    this.contador.update((valor) => valor - 1);
+    this.contador.update(valor => valor - 1);
   }
 
   resetear() {
@@ -1364,7 +1375,7 @@ export class ContadorSignalComponent {
 
 ```typescript
 // perfil-signal.component.ts
-import { Component, signal } from "@angular/core";
+import { Component, signal } from '@angular/core';
 
 interface Usuario {
   nombre: string;
@@ -1373,7 +1384,7 @@ interface Usuario {
 }
 
 @Component({
-  selector: "app-perfil-signal",
+  selector: 'app-perfil-signal',
   standalone: true,
   imports: [FormsModule],
   template: `
@@ -1384,9 +1395,14 @@ interface Usuario {
 
       <div>
         <h3>Editar Perfil</h3>
-        <input [value]="usuario().nombre" (input)="actualizarNombre($any($event.target).value)" />
+        <input
+          [value]="usuario().nombre"
+          (input)="actualizarNombre($any($event.target).value)" />
 
-        <input type="number" [value]="usuario().edad" (input)="actualizarEdad(+$any($event.target).value)" />
+        <input
+          type="number"
+          [value]="usuario().edad"
+          (input)="actualizarEdad(+$any($event.target).value)" />
 
         <button (click)="cumplirAnios()">🎂 Cumplir Años</button>
       </div>
@@ -1395,28 +1411,28 @@ interface Usuario {
 })
 export class PerfilSignalComponent {
   usuario = signal<Usuario>({
-    nombre: "Ana García",
+    nombre: 'Ana García',
     edad: 25,
-    email: "ana@example.com",
+    email: 'ana@example.com',
   });
 
   actualizarNombre(nombre: string) {
     // Actualizar propiedad específica del objeto
-    this.usuario.update((user) => ({
+    this.usuario.update(user => ({
       ...user,
       nombre,
     }));
   }
 
   actualizarEdad(edad: number) {
-    this.usuario.update((user) => ({
+    this.usuario.update(user => ({
       ...user,
       edad,
     }));
   }
 
   cumplirAnios() {
-    this.usuario.update((user) => ({
+    this.usuario.update(user => ({
       ...user,
       edad: user.edad + 1,
     }));
@@ -1431,14 +1447,14 @@ export class PerfilSignalComponent {
 this.usuario().edad = 26; // No funciona
 
 // ✅ BIEN - Crear nuevo objeto
-this.usuario.update((u) => ({ ...u, edad: 26 }));
+this.usuario.update(u => ({ ...u, edad: 26 }));
 ```
 
 **Paso 3: Signals con arrays**
 
 ```typescript
 // lista-tareas-signal.component.ts
-import { Component, signal } from "@angular/core";
+import { Component, signal } from '@angular/core';
 
 interface Tarea {
   id: number;
@@ -1447,7 +1463,7 @@ interface Tarea {
 }
 
 @Component({
-  selector: "app-lista-tareas-signal",
+  selector: 'app-lista-tareas-signal',
   standalone: true,
   imports: [FormsModule],
   template: `
@@ -1455,14 +1471,24 @@ interface Tarea {
       <h2>Tareas ({{ tareas().length }})</h2>
 
       <div>
-        <input #inputTarea placeholder="Nueva tarea" (keyup.enter)="agregarTarea(inputTarea.value); inputTarea.value = ''" />
-        <button (click)="agregarTarea(inputTarea.value); inputTarea.value = ''">Agregar</button>
+        <input
+          #inputTarea
+          placeholder="Nueva tarea"
+          (keyup.enter)="
+            agregarTarea(inputTarea.value); inputTarea.value = ''
+          " />
+        <button (click)="agregarTarea(inputTarea.value); inputTarea.value = ''">
+          Agregar
+        </button>
       </div>
 
       <ul>
         @for (tarea of tareas(); track tarea.id) {
           <li [class.completada]="tarea.completada">
-            <input type="checkbox" [checked]="tarea.completada" (change)="toggleTarea(tarea.id)" />
+            <input
+              type="checkbox"
+              [checked]="tarea.completada"
+              (change)="toggleTarea(tarea.id)" />
             <span>{{ tarea.texto }}</span>
             <button (click)="eliminarTarea(tarea.id)">🗑️</button>
           </li>
@@ -1490,7 +1516,7 @@ export class ListaTareasSignalComponent {
   agregarTarea(texto: string) {
     if (!texto.trim()) return;
 
-    this.tareas.update((tareas) => [
+    this.tareas.update(tareas => [
       ...tareas,
       {
         id: this.siguienteId++,
@@ -1501,15 +1527,17 @@ export class ListaTareasSignalComponent {
   }
 
   toggleTarea(id: number) {
-    this.tareas.update((tareas) => tareas.map((t) => (t.id === id ? { ...t, completada: !t.completada } : t)));
+    this.tareas.update(tareas =>
+      tareas.map(t => (t.id === id ? { ...t, completada: !t.completada } : t))
+    );
   }
 
   eliminarTarea(id: number) {
-    this.tareas.update((tareas) => tareas.filter((t) => t.id !== id));
+    this.tareas.update(tareas => tareas.filter(t => t.id !== id));
   }
 
   limpiarCompletadas() {
-    this.tareas.update((tareas) => tareas.filter((t) => !t.completada));
+    this.tareas.update(tareas => tareas.filter(t => !t.completada));
   }
 }
 ```
@@ -1518,10 +1546,10 @@ export class ListaTareasSignalComponent {
 
 ```typescript
 // comparacion.component.ts
-import { Component, signal } from "@angular/core";
+import { Component, signal } from '@angular/core';
 
 @Component({
-  selector: "app-comparacion",
+  selector: 'app-comparacion',
   standalone: true,
   template: `
     <div class="comparacion">
@@ -1554,7 +1582,7 @@ export class ComparacionComponent {
   }
 
   incrementarSignal() {
-    this.contadorSignal.update((v) => v + 1);
+    this.contadorSignal.update(v => v + 1);
     // Angular solo actualiza lo que usa este signal
   }
 }
@@ -1564,7 +1592,7 @@ export class ComparacionComponent {
 
 ```typescript
 // carrito-signal.component.ts
-import { Component, signal } from "@angular/core";
+import { Component, signal } from '@angular/core';
 
 interface Producto {
   id: number;
@@ -1578,7 +1606,7 @@ interface ItemCarrito {
 }
 
 @Component({
-  selector: "app-carrito-signal",
+  selector: 'app-carrito-signal',
   standalone: true,
   template: `
     <div class="carrito">
@@ -1607,29 +1635,44 @@ interface ItemCarrito {
 export class CarritoSignalComponent {
   items = signal<ItemCarrito[]>([
     {
-      producto: { id: 1, nombre: "Laptop", precio: 999 },
+      producto: { id: 1, nombre: 'Laptop', precio: 999 },
       cantidad: 1,
     },
     {
-      producto: { id: 2, nombre: "Mouse", precio: 25 },
+      producto: { id: 2, nombre: 'Mouse', precio: 25 },
       cantidad: 2,
     },
   ]);
 
   incrementar(id: number) {
-    this.items.update((items) => items.map((item) => (item.producto.id === id ? { ...item, cantidad: item.cantidad + 1 } : item)));
+    this.items.update(items =>
+      items.map(item =>
+        item.producto.id === id
+          ? { ...item, cantidad: item.cantidad + 1 }
+          : item
+      )
+    );
   }
 
   decrementar(id: number) {
-    this.items.update((items) => items.map((item) => (item.producto.id === id && item.cantidad > 1 ? { ...item, cantidad: item.cantidad - 1 } : item)));
+    this.items.update(items =>
+      items.map(item =>
+        item.producto.id === id && item.cantidad > 1
+          ? { ...item, cantidad: item.cantidad - 1 }
+          : item
+      )
+    );
   }
 
   eliminar(id: number) {
-    this.items.update((items) => items.filter((item) => item.producto.id !== id));
+    this.items.update(items => items.filter(item => item.producto.id !== id));
   }
 
   calcularTotal(): number {
-    return this.items().reduce((total, item) => total + item.producto.precio * item.cantidad, 0);
+    return this.items().reduce(
+      (total, item) => total + item.producto.precio * item.cantidad,
+      0
+    );
   }
 }
 ```
@@ -1687,7 +1730,7 @@ export class CarritoSignalComponent {
 Son signals que derivan su valor de otros signals. Se recalculan automáticamente cuando sus dependencias cambian, y cachean el resultado.
 
 ```typescript
-import { signal, computed } from "@angular/core";
+import { signal, computed } from '@angular/core';
 
 cantidad = signal(5);
 precio = signal(10);
@@ -1715,10 +1758,10 @@ constructor() {
 
 ```typescript
 // calculadora-signal.component.ts
-import { Component, signal, computed } from "@angular/core";
+import { Component, signal, computed } from '@angular/core';
 
 @Component({
-  selector: "app-calculadora-signal",
+  selector: 'app-calculadora-signal',
   standalone: true,
   template: `
     <div class="calculadora">
@@ -1726,12 +1769,18 @@ import { Component, signal, computed } from "@angular/core";
 
       <div>
         <label>Número 1:</label>
-        <input type="number" [value]="num1()" (input)="num1.set(+$any($event.target).value)" />
+        <input
+          type="number"
+          [value]="num1()"
+          (input)="num1.set(+$any($event.target).value)" />
       </div>
 
       <div>
         <label>Número 2:</label>
-        <input type="number" [value]="num2()" (input)="num2.set(+$any($event.target).value)" />
+        <input
+          type="number"
+          [value]="num2()"
+          (input)="num2.set(+$any($event.target).value)" />
       </div>
 
       <div class="resultados">
@@ -1753,7 +1802,7 @@ export class CalculadoraSignalComponent {
   multiplicacion = computed(() => this.num1() * this.num2());
   division = computed(() => {
     const divisor = this.num2();
-    return divisor !== 0 ? this.num1() / divisor : "No se puede dividir por 0";
+    return divisor !== 0 ? this.num1() / divisor : 'No se puede dividir por 0';
   });
 }
 ```
@@ -1762,7 +1811,7 @@ export class CalculadoraSignalComponent {
 
 ```typescript
 // carrito-computed.component.ts
-import { Component, signal, computed } from "@angular/core";
+import { Component, signal, computed } from '@angular/core';
 
 interface Producto {
   id: number;
@@ -1773,7 +1822,7 @@ interface Producto {
 }
 
 @Component({
-  selector: "app-carrito-computed",
+  selector: 'app-carrito-computed',
   standalone: true,
   template: `
     <div class="carrito">
@@ -1806,22 +1855,33 @@ interface Producto {
 })
 export class CarritoComputedComponent {
   productos = signal<Producto[]>([
-    { id: 1, nombre: "Laptop", precio: 1000, cantidad: 1, descuento: 10 },
-    { id: 2, nombre: "Mouse", precio: 50, cantidad: 2, descuento: 5 },
-    { id: 3, nombre: "Teclado", precio: 80, cantidad: 1, descuento: 0 },
+    { id: 1, nombre: 'Laptop', precio: 1000, cantidad: 1, descuento: 10 },
+    { id: 2, nombre: 'Mouse', precio: 50, cantidad: 2, descuento: 5 },
+    { id: 3, nombre: 'Teclado', precio: 80, cantidad: 1, descuento: 0 },
   ]);
 
   // Computed: total de items
-  totalItems = computed(() => this.productos().reduce((sum, p) => sum + p.cantidad, 0));
+  totalItems = computed(() =>
+    this.productos().reduce((sum, p) => sum + p.cantidad, 0)
+  );
 
   // Computed: subtotal antes de descuentos
-  subtotal = computed(() => this.productos().reduce((sum, p) => sum + p.precio * p.cantidad, 0));
+  subtotal = computed(() =>
+    this.productos().reduce((sum, p) => sum + p.precio * p.cantidad, 0)
+  );
 
   // Computed: descuento total
-  descuentoTotal = computed(() => this.productos().reduce((sum, p) => sum + (p.precio * p.cantidad * p.descuento) / 100, 0));
+  descuentoTotal = computed(() =>
+    this.productos().reduce(
+      (sum, p) => sum + (p.precio * p.cantidad * p.descuento) / 100,
+      0
+    )
+  );
 
   // Computed: subtotal con descuento
-  subtotalConDescuento = computed(() => this.subtotal() - this.descuentoTotal());
+  subtotalConDescuento = computed(
+    () => this.subtotal() - this.descuentoTotal()
+  );
 
   // Computed: IVA sobre subtotal con descuento
   iva = computed(() => this.subtotalConDescuento() * 0.21);
@@ -1830,11 +1890,17 @@ export class CarritoComputedComponent {
   total = computed(() => this.subtotalConDescuento() + this.iva());
 
   incrementarCantidad(id: number) {
-    this.productos.update((productos) => productos.map((p) => (p.id === id ? { ...p, cantidad: p.cantidad + 1 } : p)));
+    this.productos.update(productos =>
+      productos.map(p => (p.id === id ? { ...p, cantidad: p.cantidad + 1 } : p))
+    );
   }
 
   decrementarCantidad(id: number) {
-    this.productos.update((productos) => productos.map((p) => (p.id === id && p.cantidad > 1 ? { ...p, cantidad: p.cantidad - 1 } : p)));
+    this.productos.update(productos =>
+      productos.map(p =>
+        p.id === id && p.cantidad > 1 ? { ...p, cantidad: p.cantidad - 1 } : p
+      )
+    );
   }
 }
 ```
@@ -1843,10 +1909,10 @@ export class CarritoComputedComponent {
 
 ```typescript
 // logger.component.ts
-import { Component, signal, effect } from "@angular/core";
+import { Component, signal, effect } from '@angular/core';
 
 @Component({
-  selector: "app-logger",
+  selector: 'app-logger',
   standalone: true,
   template: `
     <div class="logger">
@@ -1854,12 +1920,17 @@ import { Component, signal, effect } from "@angular/core";
 
       <div>
         <label>Nombre:</label>
-        <input [value]="nombre()" (input)="nombre.set($any($event.target).value)" />
+        <input
+          [value]="nombre()"
+          (input)="nombre.set($any($event.target).value)" />
       </div>
 
       <div>
         <label>Edad:</label>
-        <input type="number" [value]="edad()" (input)="edad.set(+$any($event.target).value)" />
+        <input
+          type="number"
+          [value]="edad()"
+          (input)="edad.set(+$any($event.target).value)" />
       </div>
 
       <p>Revisa la consola para ver los logs</p>
@@ -1867,23 +1938,23 @@ import { Component, signal, effect } from "@angular/core";
   `,
 })
 export class LoggerComponent {
-  nombre = signal("");
+  nombre = signal('');
   edad = signal(0);
 
   constructor() {
     // Effect: se ejecuta cuando nombre cambia
     effect(() => {
-      console.log("Nombre cambió a:", this.nombre());
+      console.log('Nombre cambió a:', this.nombre());
     });
 
     // Effect: se ejecuta cuando edad cambia
     effect(() => {
-      console.log("Edad cambió a:", this.edad());
+      console.log('Edad cambió a:', this.edad());
 
       if (this.edad() >= 18) {
-        console.log("✅ Mayor de edad");
+        console.log('✅ Mayor de edad');
       } else {
-        console.log("❌ Menor de edad");
+        console.log('❌ Menor de edad');
       }
     });
 
@@ -1901,16 +1972,16 @@ export class LoggerComponent {
 
 ```typescript
 // configuracion.component.ts
-import { Component, signal, effect } from "@angular/core";
+import { Component, signal, effect } from '@angular/core';
 
 interface Configuracion {
-  tema: "claro" | "oscuro";
+  tema: 'claro' | 'oscuro';
   idioma: string;
   notificaciones: boolean;
 }
 
 @Component({
-  selector: "app-configuracion",
+  selector: 'app-configuracion',
   standalone: true,
   template: `
     <div class="configuracion">
@@ -1918,7 +1989,9 @@ interface Configuracion {
 
       <div>
         <label>Tema:</label>
-        <select [value]="config().tema" (change)="actualizarTema($any($event.target).value)">
+        <select
+          [value]="config().tema"
+          (change)="actualizarTema($any($event.target).value)">
           <option value="claro">Claro</option>
           <option value="oscuro">Oscuro</option>
         </select>
@@ -1926,7 +1999,9 @@ interface Configuracion {
 
       <div>
         <label>Idioma:</label>
-        <select [value]="config().idioma" (change)="actualizarIdioma($any($event.target).value)">
+        <select
+          [value]="config().idioma"
+          (change)="actualizarIdioma($any($event.target).value)">
           <option value="es">Español</option>
           <option value="en">English</option>
           <option value="fr">Français</option>
@@ -1935,7 +2010,10 @@ interface Configuracion {
 
       <div>
         <label>
-          <input type="checkbox" [checked]="config().notificaciones" (change)="toggleNotificaciones()" />
+          <input
+            type="checkbox"
+            [checked]="config().notificaciones"
+            (change)="toggleNotificaciones()" />
           Notificaciones
         </label>
       </div>
@@ -1949,12 +2027,12 @@ interface Configuracion {
 export class ConfiguracionComponent {
   // Cargar configuración desde localStorage
   private cargarConfig(): Configuracion {
-    const guardada = localStorage.getItem("configuracion");
+    const guardada = localStorage.getItem('configuracion');
     return guardada
       ? JSON.parse(guardada)
       : {
-          tema: "claro",
-          idioma: "es",
+          tema: 'claro',
+          idioma: 'es',
           notificaciones: true,
         };
   }
@@ -1965,26 +2043,26 @@ export class ConfiguracionComponent {
     // Effect: guardar en localStorage cuando cambie
     effect(() => {
       const configuracion = this.config();
-      localStorage.setItem("configuracion", JSON.stringify(configuracion));
-      console.log("Configuración guardada:", configuracion);
+      localStorage.setItem('configuracion', JSON.stringify(configuracion));
+      console.log('Configuración guardada:', configuracion);
     });
 
     // Effect: aplicar tema al documento
     effect(() => {
-      document.body.setAttribute("data-theme", this.config().tema);
+      document.body.setAttribute('data-theme', this.config().tema);
     });
   }
 
-  actualizarTema(tema: "claro" | "oscuro") {
-    this.config.update((c) => ({ ...c, tema }));
+  actualizarTema(tema: 'claro' | 'oscuro') {
+    this.config.update(c => ({ ...c, tema }));
   }
 
   actualizarIdioma(idioma: string) {
-    this.config.update((c) => ({ ...c, idioma }));
+    this.config.update(c => ({ ...c, idioma }));
   }
 
   toggleNotificaciones() {
-    this.config.update((c) => ({
+    this.config.update(c => ({
       ...c,
       notificaciones: !c.notificaciones,
     }));
@@ -1992,8 +2070,8 @@ export class ConfiguracionComponent {
 
   resetear() {
     this.config.set({
-      tema: "claro",
-      idioma: "es",
+      tema: 'claro',
+      idioma: 'es',
       notificaciones: true,
     });
   }
@@ -2004,10 +2082,10 @@ export class ConfiguracionComponent {
 
 ```typescript
 // temporizador-effect.component.ts
-import { Component, signal, effect } from "@angular/core";
+import { Component, signal, effect } from '@angular/core';
 
 @Component({
-  selector: "app-temporizador-effect",
+  selector: 'app-temporizador-effect',
   standalone: true,
   template: `
     <div class="temporizador">
@@ -2029,17 +2107,17 @@ export class TemporizadorEffectComponent {
 
   constructor() {
     // Effect con cleanup
-    effect((onCleanup) => {
+    effect(onCleanup => {
       if (this.activo()) {
-        console.log("Iniciando temporizador");
+        console.log('Iniciando temporizador');
 
         const intervalo = setInterval(() => {
-          this.segundos.update((s) => s + 1);
+          this.segundos.update(s => s + 1);
         }, 1000);
 
         // Cleanup: limpiar el intervalo cuando el effect se destruya
         onCleanup(() => {
-          console.log("Limpiando temporizador");
+          console.log('Limpiando temporizador');
           clearInterval(intervalo);
         });
       }
@@ -2073,16 +2151,19 @@ export class TemporizadorEffectComponent {
 
 ```typescript
 // comparacion-computed.component.ts
-import { Component, signal, computed } from "@angular/core";
+import { Component, signal, computed } from '@angular/core';
 
 @Component({
-  selector: "app-comparacion-computed",
+  selector: 'app-comparacion-computed',
   standalone: true,
   template: `
     <div class="comparacion">
       <h2>Computed vs Métodos</h2>
 
-      <input type="number" [value]="numero()" (input)="numero.set(+$any($event.target).value)" />
+      <input
+        type="number"
+        [value]="numero()"
+        (input)="numero.set(+$any($event.target).value)" />
 
       <div>
         <h3>Usando Computed (Cachea resultado)</h3>
@@ -2096,7 +2177,12 @@ import { Component, signal, computed } from "@angular/core";
         <p>Cuadrado: {{ cuadradoMetodo() }}</p>
       </div>
 
-      <p><small>Abre la consola: computed calcula una vez, método calcula múltiples veces</small></p>
+      <p>
+        <small
+          >Abre la consola: computed calcula una vez, método calcula múltiples
+          veces</small
+        >
+      </p>
     </div>
   `,
 })
@@ -2105,23 +2191,23 @@ export class ComparacionComputedComponent {
 
   // Computed: calcula una vez y cachea
   factorialComputed = computed(() => {
-    console.log("💚 Computed factorial ejecutado");
+    console.log('💚 Computed factorial ejecutado');
     return this.calcularFactorial(this.numero());
   });
 
   cuadradoComputed = computed(() => {
-    console.log("💚 Computed cuadrado ejecutado");
+    console.log('💚 Computed cuadrado ejecutado');
     return this.numero() ** 2;
   });
 
   // Métodos: se ejecutan cada vez que se llaman
   factorialMetodo(): number {
-    console.log("🔴 Método factorial ejecutado");
+    console.log('🔴 Método factorial ejecutado');
     return this.calcularFactorial(this.numero());
   }
 
   cuadradoMetodo(): number {
-    console.log("🔴 Método cuadrado ejecutado");
+    console.log('🔴 Método cuadrado ejecutado');
     return this.numero() ** 2;
   }
 
@@ -2136,7 +2222,7 @@ export class ComparacionComputedComponent {
 
 ```typescript
 // analisis-datos.component.ts
-import { Component, signal, computed } from "@angular/core";
+import { Component, signal, computed } from '@angular/core';
 
 interface Venta {
   id: number;
@@ -2147,7 +2233,7 @@ interface Venta {
 }
 
 @Component({
-  selector: "app-analisis-datos",
+  selector: 'app-analisis-datos',
   standalone: true,
   template: `
     <div class="analisis">
@@ -2181,15 +2267,17 @@ interface Venta {
 })
 export class AnalisisDatosComponent {
   ventas = signal<Venta[]>([
-    { id: 1, producto: "Laptop", cantidad: 2, precio: 1000, fecha: new Date() },
-    { id: 2, producto: "Mouse", cantidad: 5, precio: 25, fecha: new Date() },
-    { id: 3, producto: "Teclado", cantidad: 3, precio: 75, fecha: new Date() },
+    { id: 1, producto: 'Laptop', cantidad: 2, precio: 1000, fecha: new Date() },
+    { id: 2, producto: 'Mouse', cantidad: 5, precio: 25, fecha: new Date() },
+    { id: 3, producto: 'Teclado', cantidad: 3, precio: 75, fecha: new Date() },
   ]);
 
   // Computed básicos: total de ventas
   totalVentas = computed(() => this.ventas().length);
 
-  ingresosTotales = computed(() => this.ventas().reduce((sum, v) => sum + v.cantidad * v.precio, 0)); // Ingresos totales
+  ingresosTotales = computed(() =>
+    this.ventas().reduce((sum, v) => sum + v.cantidad * v.precio, 0)
+  ); // Ingresos totales
 
   // Computed que depende de otros computed para calcular el ticket promedio
   ticketPromedio = computed(() => {
@@ -2200,24 +2288,26 @@ export class AnalisisDatosComponent {
   // Computed con lógica compleja
   productoMasVendido = computed(() => {
     const ventas = this.ventas();
-    if (ventas.length === 0) return "N/A";
+    if (ventas.length === 0) return 'N/A';
 
     const ventasPorProducto = ventas.reduce(
       (acc, v) => {
         acc[v.producto] = (acc[v.producto] || 0) + v.cantidad;
         return acc;
       },
-      {} as Record<string, number>,
+      {} as Record<string, number>
     );
 
-    return Object.entries(ventasPorProducto).sort(([, a], [, b]) => b - a)[0][0]; // Producto más vendido
+    return Object.entries(ventasPorProducto).sort(
+      ([, a], [, b]) => b - a
+    )[0][0]; // Producto más vendido
   });
 
   agregarVentaAleatoria() {
-    const productos = ["Laptop", "Mouse", "Teclado", "Monitor", "Webcam"];
+    const productos = ['Laptop', 'Mouse', 'Teclado', 'Monitor', 'Webcam'];
     const producto = productos[Math.floor(Math.random() * productos.length)];
 
-    this.ventas.update((ventas) => [
+    this.ventas.update(ventas => [
       ...ventas,
       {
         id: ventas.length + 1,
@@ -2305,10 +2395,10 @@ nombre = input.required<string>(); // Requerido
 
 ```typescript
 // Componente Hijo: tarjeta-producto.component.ts
-import { Component, input, computed } from "@angular/core";
+import { Component, input, computed } from '@angular/core';
 
 @Component({
-  selector: "app-tarjeta-producto",
+  selector: 'app-tarjeta-producto',
   standalone: true,
   template: `
     <div class="tarjeta">
@@ -2367,7 +2457,7 @@ export class TarjetaProductoComponent {
   // Input signals básicos
   nombre = input.required<string>(); // Requerido
   precio = input.required<number>();
-  imagen = input<string>("https://via.placeholder.com/200"); // Opcional con default
+  imagen = input<string>('https://via.placeholder.com/200'); // Opcional con default
   enStock = input<boolean>(true);
   descuento = input<number>(0);
 
@@ -2375,18 +2465,18 @@ export class TarjetaProductoComponent {
   textoDescuento = computed(() => {
     // Muestra el texto de descuento
     const desc = this.descuento();
-    return desc > 0 ? `${desc}% de descuento` : "";
+    return desc > 0 ? `${desc}% de descuento` : '';
   });
 }
 ```
 
 ```typescript
 // Componente Padre: catalogo.component.ts
-import { Component, signal } from "@angular/core";
-import { TarjetaProductoComponent } from "./tarjeta-producto.component";
+import { Component, signal } from '@angular/core';
+import { TarjetaProductoComponent } from './tarjeta-producto.component';
 
 @Component({
-  selector: "app-catalogo",
+  selector: 'app-catalogo',
   standalone: true,
   imports: [TarjetaProductoComponent],
   template: `
@@ -2395,7 +2485,13 @@ import { TarjetaProductoComponent } from "./tarjeta-producto.component";
 
       <div class="grid">
         @for (producto of productos(); track producto.id) {
-          <app-tarjeta-producto [nombre]="producto.nombre" [precio]="producto.precio" [imagen]="producto.imagen" [enStock]="producto.enStock" [descuento]="producto.descuento"> </app-tarjeta-producto>
+          <app-tarjeta-producto
+            [nombre]="producto.nombre"
+            [precio]="producto.precio"
+            [imagen]="producto.imagen"
+            [enStock]="producto.enStock"
+            [descuento]="producto.descuento">
+          </app-tarjeta-producto>
         }
       </div>
     </div>
@@ -2414,25 +2510,25 @@ export class CatalogoComponent {
   productos = signal([
     {
       id: 1,
-      nombre: "Laptop Pro",
+      nombre: 'Laptop Pro',
       precio: 1299,
-      imagen: "https://via.placeholder.com/200",
+      imagen: 'https://via.placeholder.com/200',
       enStock: true,
       descuento: 15,
     },
     {
       id: 2,
-      nombre: "Mouse Gamer",
+      nombre: 'Mouse Gamer',
       precio: 79,
-      imagen: "https://via.placeholder.com/200",
+      imagen: 'https://via.placeholder.com/200',
       enStock: true,
       descuento: 0,
     },
     {
       id: 3,
-      nombre: "Teclado Mecánico",
+      nombre: 'Teclado Mecánico',
       precio: 159,
-      imagen: "https://via.placeholder.com/200",
+      imagen: 'https://via.placeholder.com/200',
       enStock: false,
       descuento: 20,
     },
@@ -2444,24 +2540,24 @@ export class CatalogoComponent {
 
 ```typescript
 // tarjeta-usuario.component.ts
-import { Component, input, computed } from "@angular/core";
+import { Component, input, computed } from '@angular/core';
 
 @Component({
-  selector: "app-tarjeta-usuario",
+  selector: 'app-tarjeta-usuario',
   standalone: true,
   template: `
     <div class="tarjeta-usuario">
       <!-- Corregido: div para la tarjeta -->
       <h3>{{ nombreMayusculas() }}</h3>
       <p>Edad: {{ edad() }} años</p>
-      <p>Activo: {{ activo() ? "Sí" : "No" }}</p>
+      <p>Activo: {{ activo() ? 'Sí' : 'No' }}</p>
       <p>Puntos: {{ puntos() }}</p>
     </div>
   `,
 })
 export class TarjetaUsuarioComponent {
   // Transform: convertir a mayúsculas
-  nombre = input("", {
+  nombre = input('', {
     // Input para el nombre
     transform: (value: string) => value.toUpperCase(),
   });
@@ -2472,7 +2568,7 @@ export class TarjetaUsuarioComponent {
   // Transform: asegurar número válido
   edad = input(0, {
     transform: (value: string | number) => {
-      const num = typeof value === "string" ? parseInt(value) : value;
+      const num = typeof value === 'string' ? parseInt(value) : value;
       return isNaN(num) ? 0 : num;
     },
   });
@@ -2480,8 +2576,8 @@ export class TarjetaUsuarioComponent {
   // Transform: convertir string a boolean (útil para atributos HTML)
   activo = input(false, {
     transform: (value: boolean | string) => {
-      if (typeof value === "string") {
-        return value === "true" || value === "1";
+      if (typeof value === 'string') {
+        return value === 'true' || value === '1';
       }
       return value;
     },
@@ -2497,10 +2593,17 @@ export class TarjetaUsuarioComponent {
 ```typescript
 // Uso del componente con transforms
 @Component({
-  selector: "app-usuarios",
+  selector: 'app-usuarios',
   standalone: true,
   imports: [TarjetaUsuarioComponent],
-  template: ` <app-tarjeta-usuario nombre="ana garcía" [edad]="25.7" activo="true" [puntos]="150.8"> </app-tarjeta-usuario> `,
+  template: `
+    <app-tarjeta-usuario
+      nombre="ana garcía"
+      [edad]="25.7"
+      activo="true"
+      [puntos]="150.8">
+    </app-tarjeta-usuario>
+  `,
 })
 export class UsuariosComponent {}
 ```
@@ -2509,10 +2612,10 @@ export class UsuariosComponent {}
 
 ```typescript
 // comentario.component.ts
-import { Component, input, computed } from "@angular/core";
+import { Component, input, computed } from '@angular/core';
 
 @Component({
-  selector: "app-comentario",
+  selector: 'app-comentario',
   standalone: true,
   template: `
     <div class="comentario">
@@ -2529,15 +2632,15 @@ import { Component, input, computed } from "@angular/core";
 })
 export class ComentarioComponent {
   // Usar alias para nombres diferentes en template vs propiedad
-  nombreAutor = input.required<string>({ alias: "autor" }); // Alias 'autor'
-  textoComentario = input.required<string>({ alias: "texto" }); // Alias 'texto'
-  fechaComentario = input.required<Date>({ alias: "fecha" }); // Alias 'fecha'
-  meGusta = input<number>(0, { alias: "likes" }); // Alias 'likes'
+  nombreAutor = input.required<string>({ alias: 'autor' }); // Alias 'autor'
+  textoComentario = input.required<string>({ alias: 'texto' }); // Alias 'texto'
+  fechaComentario = input.required<Date>({ alias: 'fecha' }); // Alias 'fecha'
+  meGusta = input<number>(0, { alias: 'likes' }); // Alias 'likes'
 
   fechaFormateada = computed(() => {
     // Computed para formatear la fecha
     const fecha = this.fechaComentario();
-    return fecha.toLocaleDateString("es-ES");
+    return fecha.toLocaleDateString('es-ES');
   });
 }
 ```
@@ -2545,10 +2648,17 @@ export class ComentarioComponent {
 ```typescript
 // Uso con alias
 @Component({
-  selector: "app-comentarios",
+  selector: 'app-comentarios',
   standalone: true,
   imports: [ComentarioComponent],
-  template: ` <app-comentario autor="Ana García" texto="¡Excelente artículo!" [fecha]="new Date()" [likes]="15"> </app-comentario> `,
+  template: `
+    <app-comentario
+      autor="Ana García"
+      texto="¡Excelente artículo!"
+      [fecha]="new Date()"
+      [likes]="15">
+    </app-comentario>
+  `,
 })
 export class ComentariosComponent {}
 ```
@@ -2557,12 +2667,12 @@ export class ComentariosComponent {}
 
 ```typescript
 // notificacion.component.ts
-import { Component, input, effect } from "@angular/core";
+import { Component, input, effect } from '@angular/core';
 
-type TipoNotificacion = "info" | "success" | "warning" | "error";
+type TipoNotificacion = 'info' | 'success' | 'warning' | 'error';
 
 @Component({
-  selector: "app-notificacion",
+  selector: 'app-notificacion',
   standalone: true,
   template: `
     <div [class]="'notificacion ' + tipo()">
@@ -2601,7 +2711,7 @@ type TipoNotificacion = "info" | "success" | "warning" | "error";
 })
 export class NotificacionComponent {
   mensaje = input.required<string>();
-  tipo = input<TipoNotificacion>("info");
+  tipo = input<TipoNotificacion>('info');
   duracion = input<number>(0); // 0 = no se auto-cierra
 
   constructor() {
@@ -2612,7 +2722,7 @@ export class NotificacionComponent {
     });
 
     // Effect: auto-cerrar si tiene duración
-    effect((onCleanup) => {
+    effect(onCleanup => {
       // onCleanup para limpiar el temporizador
       const duracion = this.duracion();
 
@@ -2620,7 +2730,7 @@ export class NotificacionComponent {
         console.log(`Notificación se cerrará en ${duracion}ms`);
 
         const timeout = setTimeout(() => {
-          console.log("Notificación cerrada automáticamente");
+          console.log('Notificación cerrada automáticamente');
           // Aquí se podría emitir un evento de cierre (ver Clase 9: Output Signals)
         }, duracion);
 
@@ -2632,10 +2742,10 @@ export class NotificacionComponent {
   icono() {
     const iconos: Record<TipoNotificacion, string> = {
       // Mapeo de tipos a iconos
-      info: "ℹ️",
-      success: "✅",
-      warning: "⚠️",
-      error: "❌",
+      info: 'ℹ️',
+      success: '✅',
+      warning: '⚠️',
+      error: '❌',
     };
     return iconos[this.tipo()];
   }
@@ -2646,7 +2756,7 @@ export class NotificacionComponent {
 
 ```typescript
 // filtro-productos.component.ts
-import { Component, input, computed } from "@angular/core";
+import { Component, input, computed } from '@angular/core';
 
 interface Producto {
   id: number;
@@ -2656,7 +2766,7 @@ interface Producto {
 }
 
 @Component({
-  selector: "app-filtro-productos",
+  selector: 'app-filtro-productos',
   standalone: true,
   template: `
     <div class="filtro-productos">
@@ -2682,10 +2792,10 @@ interface Producto {
 export class FiltroProductosComponent {
   // Inputs
   productos = input.required<Producto[]>();
-  categoriaSeleccionada = input<string>("todas");
+  categoriaSeleccionada = input<string>('todas');
   precioMinimo = input<number>(0);
   precioMaximo = input<number>(Infinity);
-  busqueda = input<string>("");
+  busqueda = input<string>('');
 
   // Computed: filtrar productos
   productosFiltrados = computed(() => {
@@ -2693,19 +2803,21 @@ export class FiltroProductosComponent {
 
     // Filtro por categoría
     const categoria = this.categoriaSeleccionada(); // Obtiene la categoría seleccionada
-    if (categoria !== "todas") {
-      filtrados = filtrados.filter((p) => p.categoría === categoria);
+    if (categoria !== 'todas') {
+      filtrados = filtrados.filter(p => p.categoría === categoria);
     }
 
     // Filtro por precio
     const min = this.precioMinimo();
     const max = this.precioMaximo();
-    filtrados = filtrados.filter((p) => p.precio >= min && p.precio <= max);
+    filtrados = filtrados.filter(p => p.precio >= min && p.precio <= max);
 
     // Filtro por búsqueda
     const busqueda = this.busqueda().toLowerCase(); // Convierte a minúsculas para búsqueda insensible a mayúsculas
     if (busqueda) {
-      filtrados = filtrados.filter((p) => p.nombre.toLowerCase().includes(busqueda));
+      filtrados = filtrados.filter(p =>
+        p.nombre.toLowerCase().includes(busqueda)
+      );
     }
 
     return filtrados;
@@ -2722,9 +2834,9 @@ export class FiltroProductosComponent {
 }
 
 // tienda.component.ts
-import { Component, signal } from "@angular/core";
-import { FormsModule } from "@angular/forms";
-import { FiltroProductosComponent } from "./filtro-productos.component";
+import { Component, signal } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { FiltroProductosComponent } from './filtro-productos.component';
 
 interface Producto {
   id: number;
@@ -2734,7 +2846,7 @@ interface Producto {
 }
 
 @Component({
-  selector: "app-tienda",
+  selector: 'app-tienda',
   standalone: true,
   imports: [FiltroProductosComponent, FormsModule],
   template: `
@@ -2742,47 +2854,67 @@ interface Producto {
       <h2>Tienda Online</h2>
 
       <div class="controles">
-        <select [(ngModel)]="categoriaActual" aria-label="Filtrar por categoría">
+        <select
+          [(ngModel)]="categoriaActual"
+          aria-label="Filtrar por categoría">
           <option value="todas">Todas las categorías</option>
           <option value="electrónica">Electrónica</option>
           <option value="ropa">Ropa</option>
           <option value="hogar">Hogar</option>
         </select>
-        <input type="number" [(ngModel)]="precioMin" placeholder="Precio mínimo" min="0" />
+        <input
+          type="number"
+          [(ngModel)]="precioMin"
+          placeholder="Precio mínimo"
+          min="0" />
 
-        <input type="number" [(ngModel)]="precioMax" placeholder="Precio máximo" min="0" />
+        <input
+          type="number"
+          [(ngModel)]="precioMax"
+          placeholder="Precio máximo"
+          min="0" />
 
-        <input type="text" [(ngModel)]="textoBusqueda" placeholder="Buscar por nombre" />
+        <input
+          type="text"
+          [(ngModel)]="textoBusqueda"
+          placeholder="Buscar por nombre" />
       </div>
 
-      <app-filtro-productos [productos]="productos()" [categoriaSeleccionada]="categoriaActual" [precioMinimo]="precioMinNumber" [precioMaximo]="precioMaxNumber" [busqueda]="textoBusqueda"></app-filtro-productos>
+      <app-filtro-productos
+        [productos]="productos()"
+        [categoriaSeleccionada]="categoriaActual"
+        [precioMinimo]="precioMinNumber"
+        [precioMaximo]="precioMaxNumber"
+        [busqueda]="textoBusqueda"></app-filtro-productos>
     </div>
   `,
 })
 export class TiendaComponent {
   // Datos (señal) simulados
   productos = signal<Producto[]>([
-    { id: 1, nombre: "Smartphone X", precio: 799, categoría: "electrónica" },
-    { id: 2, nombre: "Camiseta Algodón", precio: 19.99, categoría: "ropa" },
-    { id: 3, nombre: "Aspiradora 2 en 1", precio: 129, categoría: "hogar" },
-    { id: 4, nombre: "Auriculares Pro", precio: 149, categoría: "electrónica" },
-    { id: 5, nombre: "Pantalón Vaquero", precio: 39.9, categoría: "ropa" },
+    { id: 1, nombre: 'Smartphone X', precio: 799, categoría: 'electrónica' },
+    { id: 2, nombre: 'Camiseta Algodón', precio: 19.99, categoría: 'ropa' },
+    { id: 3, nombre: 'Aspiradora 2 en 1', precio: 129, categoría: 'hogar' },
+    { id: 4, nombre: 'Auriculares Pro', precio: 149, categoría: 'electrónica' },
+    { id: 5, nombre: 'Pantalón Vaquero', precio: 39.9, categoría: 'ropa' },
   ]);
 
   // Controles (propiedades comunes con ngModel)
-  categoriaActual = "todas";
+  categoriaActual = 'todas';
   precioMin = 0;
   precioMax: number | null = null; // null = sin tope
-  textoBusqueda = ""; // Texto de búsqueda
+  textoBusqueda = ''; // Texto de búsqueda
 
   // Normaliza el tope máximo (evita pasar null al hijo)
   get precioMaxNumber(): number {
-    return typeof this.precioMax === "number" ? this.precioMax : Number.POSITIVE_INFINITY;
+    return typeof this.precioMax === 'number'
+      ? this.precioMax
+      : Number.POSITIVE_INFINITY;
   }
 
   // Asegura mínimo como número válido
   get precioMinNumber(): number {
-    return typeof this.precioMin === "number" ? this.precioMin : 0;
+    return typeof this.precioMin === 'number' ? this.precioMin : 0;
   }
 }
 ```

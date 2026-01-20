@@ -8,9 +8,8 @@ describe('GaleriaFiltroComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [GaleriaFiltroComponent]
-    })
-    .compileComponents();
+      imports: [GaleriaFiltroComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(GaleriaFiltroComponent);
     component = fixture.componentInstance;

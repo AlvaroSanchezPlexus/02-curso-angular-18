@@ -6,16 +6,14 @@
       <input
         [value]="nombre()"
         (input)="nombre.set($any($event.target).value)"
-        placeholder="Nombre completo"
-      />
+        placeholder="Nombre completo" />
     </div>
 
     <div class="form-group">
       <input
         [value]="email()"
         (input)="email.set($any($event.target).value)"
-        placeholder="Correo electrónico"
-      />
+        placeholder="Correo electrónico" />
     </div>
 
     <div class="form-group">
@@ -23,8 +21,7 @@
         type="password"
         [value]="password()"
         (input)="password.set($any($event.target).value)"
-        placeholder="Contraseña"
-      />
+        placeholder="Contraseña" />
     </div>
 
     <div class="status-box">

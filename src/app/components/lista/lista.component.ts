@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [FormsModule],
   templateUrl: './lista.component.html',
-  styleUrl: './lista.component.scss'
+  styleUrl: './lista.component.scss',
 })
 export class ListaComponent {
   nuevaTarea = '';

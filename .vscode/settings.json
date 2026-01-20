@@ -1,7 +1,13 @@
 {
-    "workbench.colorCustomizations": {
-        "activityBar.background": "#501E1B",
-        "titleBar.activeBackground": "#702A26",
-        "titleBar.activeForeground": "#FEFCFB"
-    }
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#501E1B",
+    "titleBar.activeBackground": "#702A26",
+    "titleBar.activeForeground": "#FEFCFB"
+  },
+  "editor.formatOnPaste": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll": "explicit",
+    "source.sortMembers": "explicit"
+  }
 }

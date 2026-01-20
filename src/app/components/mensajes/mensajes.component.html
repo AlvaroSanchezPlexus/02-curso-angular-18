@@ -1,12 +1,21 @@
 <div class="messages-lab">
   @for (msg of mensajes; track msg.id) {
-  <div class="alert" [class]="msg.tipo">
-    <span class="icon">
-      @switch (msg.tipo) { @case ('info') { ℹ️ } @case ('warning') { ⚠️ } @case
-      ('error') { 🚫 } }
-    </span>
-    <p>{{ msg.texto }}</p>
-    <button (click)="eliminar(msg.id)">×</button>
-  </div>
+    <div class="alert" [class]="msg.tipo">
+      <span class="icon">
+        @switch (msg.tipo) {
+          @case ('info') {
+            ℹ️
+          }
+          @case ('warning') {
+            ⚠️
+          }
+          @case ('error') {
+            🚫
+          }
+        }
+      </span>
+      <p>{{ msg.texto }}</p>
+      <button (click)="eliminar(msg.id)">×</button>
+    </div>
   }
 </div>

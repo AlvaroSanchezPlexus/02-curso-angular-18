@@ -7,10 +7,10 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './lista-compra.component.html',
-  styleUrl: './lista-compra.component.scss'
+  styleUrl: './lista-compra.component.scss',
 })
 export class ListaCompraComponent {
-  articulos: { nombre: string, comprado: boolean }[] = [];
+  articulos: { nombre: string; comprado: boolean }[] = [];
   nuevoArticulo = '';
 
   agregar() {
@@ -20,6 +20,10 @@ export class ListaCompraComponent {
     }
   }
 
-  get total() { return this.articulos.length; }
-  get comprados() { return this.articulos.filter(a => a.comprado).length; }
+  get total() {
+    return this.articulos.length;
+  }
+  get comprados() {
+    return this.articulos.filter(a => a.comprado).length;
+  }
 }

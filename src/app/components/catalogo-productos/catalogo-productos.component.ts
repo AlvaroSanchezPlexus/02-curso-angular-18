@@ -31,6 +31,6 @@ export class CatalogoProductosComponent {
   ];
 
   public deleteProducto(nombre: string): void {
-    this.productos = this.productos.filter((p) => p.nombre !== nombre);
+    this.productos = this.productos.filter(p => p.nombre !== nombre);
   }
 }

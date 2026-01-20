@@ -293,7 +293,6 @@ export class AppComponent {
 ### 🧪 Ejercicios
 
 1. **Crear componentes**: Crea tres componentes usando CLI:
-
    - `footer` (en carpeta components)
    - `navbar` (en carpeta components)
    - `card` (en carpeta components/card)
@@ -539,19 +538,16 @@ export class ProfileComponent {
 ### 🧪 Ejercicios
 
 1. **Calculadora simple**: Crea un componente con:
-
    - Dos inputs numéricos con [(ngModel)]
    - Botones para sumar, restar, multiplicar y dividir
    - Muestra el resultado con interpolación
 
 2. **Lista de tareas**: Crea un componente que:
-
    - Tenga un input para añadir tareas
    - Un botón que añada la tarea al array
    - Muestre las tareas (usa @for que verás en la próxima clase)
 
 3. **Selector de colores**: Crea un componente con:
-
    - Input type="color" con [(ngModel)]
    - Un div cuyo color de fondo cambie según el color seleccionado
    - Muestra el código hexadecimal del color
@@ -843,14 +839,12 @@ export class DashboardComponent {
 ### 🧪 Ejercicios
 
 1. **Mostrador de mensajes**: Crea un componente que:
-
    - Tenga un array de mensajes (con id, texto, tipo: 'info' | 'warning' | 'error')
    - Use @for para mostrar todos los mensajes
    - Use @switch para mostrar diferentes íconos según el tipo
    - Permita eliminar mensajes
 
 2. **Lista de compras**: Crea un componente con:
-
    - Un input para añadir artículos
    - Una lista que use @for para mostrar artículos
    - Checkbox para marcar como comprado
@@ -858,7 +852,6 @@ export class DashboardComponent {
    - Muestra total de artículos y cuántos están comprados
 
 3. **Selector de modo**: Crea un componente que:
-
    - Tenga tres modos: 'claro', 'oscuro', 'automático'
    - Use @switch para aplicar diferentes clases CSS
    - Muestre diferentes mensajes según el modo seleccionado
@@ -1055,9 +1048,9 @@ interface Usuario {
       <h3>{{ usuario.nombre }}</h3>
       <p>{{ usuario.email }}</p>
       @if (mostrarDetalles) {
-      <div class="detalles">
-        <p>Detalles adicionales aquí</p>
-      </div>
+        <div class="detalles">
+          <p>Detalles adicionales aquí</p>
+        </div>
       }
     </div>
   `,
@@ -1097,7 +1090,7 @@ import { TarjetaUsuarioComponent } from "./tarjeta-usuario.component";
       <h2>Lista de Usuarios</h2>
 
       @for (user of usuarios; track user.email) {
-      <app-tarjeta-usuario [usuario]="user" [mostrarDetalles]="true"> </app-tarjeta-usuario>
+        <app-tarjeta-usuario [usuario]="user" [mostrarDetalles]="true"> </app-tarjeta-usuario>
       }
     </div>
   `,
@@ -1229,14 +1222,12 @@ export class BubblingComponent {
 ### 🧪 Ejercicios
 
 1. **Contador interactivo**: Crea un componente con:
-
    - Botones para incrementar/decrementar
    - Input para establecer el valor directamente usando template reference
    - Botón que use la referencia para resetear el contador
    - Detecta cuando se presiona "r" para resetear
 
 2. **Tarjeta de producto**: Crea dos componentes:
-
    - `ProductoComponent` (hijo) que reciba vía @Input:
      - nombre: string
      - precio: number
@@ -1248,7 +1239,6 @@ export class BubblingComponent {
      - Pase los datos a cada tarjeta
 
 3. **Formulario con validación visual**: Crea un formulario que:
-
    - Use template references para acceder a los inputs
    - Valide email en tiempo real (keyup event)
    - Muestre longitud del texto mientras escribes
@@ -1471,13 +1461,13 @@ interface Tarea {
 
       <ul>
         @for (tarea of tareas(); track tarea.id) {
-        <li [class.completada]="tarea.completada">
-          <input type="checkbox" [checked]="tarea.completada" (change)="toggleTarea(tarea.id)" />
-          <span>{{ tarea.texto }}</span>
-          <button (click)="eliminarTarea(tarea.id)">🗑️</button>
-        </li>
+          <li [class.completada]="tarea.completada">
+            <input type="checkbox" [checked]="tarea.completada" (change)="toggleTarea(tarea.id)" />
+            <span>{{ tarea.texto }}</span>
+            <button (click)="eliminarTarea(tarea.id)">🗑️</button>
+          </li>
         } @empty {
-        <li>No hay tareas</li>
+          <li>No hay tareas</li>
         }
       </ul>
 
@@ -1595,20 +1585,21 @@ interface ItemCarrito {
       <h2>Carrito de Compras</h2>
 
       @for (item of items(); track item.producto.id) {
-      <div class="item">
-        <span>{{ item.producto.nombre }}</span>
-        <span>\${{ item.producto.precio }}</span>
-        <button (click)="decrementar(item.producto.id)">-</button>
-        <span>{{ item.cantidad }}</span>
-        <button (click)="incrementar(item.producto.id)">+</button>
-        <button (click)="eliminar(item.producto.id)">🗑️</button>
-      </div>
+        <div class="item">
+          <span>{{ item.producto.nombre }}</span>
+          <span>\${{ item.producto.precio }}</span>
+          <button (click)="decrementar(item.producto.id)">-</button>
+          <span>{{ item.cantidad }}</span>
+          <button (click)="incrementar(item.producto.id)">+</button>
+          <button (click)="eliminar(item.producto.id)">🗑️</button>
+        </div>
       } @empty {
-      <p>Carrito vacío</p>
-      } @if (items().length > 0) {
-      <div class="total">
-        <strong>Total: \${{ calcularTotal() }}</strong>
-      </div>
+        <p>Carrito vacío</p>
+      }
+      @if (items().length > 0) {
+        <div class="total">
+          <strong>Total: \${{ calcularTotal() }}</strong>
+        </div>
       }
     </div>
   `,
@@ -1646,14 +1637,12 @@ export class CarritoSignalComponent {
 ### 🧪 Ejercicios
 
 1. **Formulario de registro con signals**: Crea un componente con signals para:
-
    - nombre, email, contraseña
    - Muestra los valores en tiempo real
    - Botón que limpie todos los campos (resetea los signals)
    - Muestra si todos los campos están completos
 
 2. **Gestor de favoritos**: Crea un componente con:
-
    - Signal con array de películas (id, título, año)
    - Función para agregar película
    - Función para eliminar película
@@ -1661,7 +1650,6 @@ export class CarritoSignalComponent {
    - Muestra contador de películas totales y vistas
 
 3. **Configuración de tema**: Crea un componente con signal para:
-
    - tema: object con {modo: 'claro' | 'oscuro', tamaño: number, fuente: string}
    - Botones para cambiar cada propiedad
    - Muestra la configuración actual
@@ -1792,14 +1780,14 @@ interface Producto {
       <h2>Carrito con Computed Signals</h2>
 
       @for (producto of productos(); track producto.id) {
-      <div class="producto">
-        <h3>{{ producto.nombre }}</h3>
-        <p>Precio: \${{ producto.precio }}</p>
-        <p>Cantidad: {{ producto.cantidad }}</p>
-        <p>Descuento: {{ producto.descuento }}%</p>
-        <button (click)="incrementarCantidad(producto.id)">+</button>
-        <button (click)="decrementarCantidad(producto.id)">-</button>
-      </div>
+        <div class="producto">
+          <h3>{{ producto.nombre }}</h3>
+          <p>Precio: \${{ producto.precio }}</p>
+          <p>Cantidad: {{ producto.cantidad }}</p>
+          <p>Descuento: {{ producto.descuento }}%</p>
+          <button (click)="incrementarCantidad(producto.id)">+</button>
+          <button (click)="decrementarCantidad(producto.id)">-</button>
+        </div>
       }
 
       <div class="resumen">
@@ -2030,7 +2018,7 @@ import { Component, signal, effect } from "@angular/core";
       <button (click)="resetear()">Resetear</button>
 
       @if (segundos() >= 10) {
-      <p class="alerta">⏰ Han pasado 10 segundos!</p>
+        <p class="alerta">⏰ Han pasado 10 segundos!</p>
       }
     </div>
   `,
@@ -2214,10 +2202,13 @@ export class AnalisisDatosComponent {
     const ventas = this.ventas();
     if (ventas.length === 0) return "N/A";
 
-    const ventasPorProducto = ventas.reduce((acc, v) => {
-      acc[v.producto] = (acc[v.producto] || 0) + v.cantidad;
-      return acc;
-    }, {} as Record<string, number>);
+    const ventasPorProducto = ventas.reduce(
+      (acc, v) => {
+        acc[v.producto] = (acc[v.producto] || 0) + v.cantidad;
+        return acc;
+      },
+      {} as Record<string, number>,
+    );
 
     return Object.entries(ventasPorProducto).sort(([, a], [, b]) => b - a)[0][0]; // Producto más vendido
   });
@@ -2243,21 +2234,18 @@ export class AnalisisDatosComponent {
 ### 🧪 Ejercicios
 
 1. **Conversor de monedas**: Crea un componente con:
-
    - Signals para cantidad en USD
    - Computed para conversión a EUR, GBP, JPY
    - Effect que loguee cada conversión
    - Muestra todas las conversiones en tiempo real
 
 2. **Dashboard de métricas**: Crea un componente con:
-
    - Signal con array de ventas mensuales
    - Computed para: total, promedio, máximo, mínimo (de ventas)
    - Computed para crecimiento porcentual mes a mes
    - Effect que guarde las métricas en localStorage
 
 3. **Filtro de productos**: Crea un componente con:
-
    - Signal con array de productos (nombre, precio, categoría, stock)
    - Signals para filtros: categoría, precio mínimo, precio máximo
    - Computed para productos filtrados
@@ -2330,9 +2318,9 @@ import { Component, input, computed } from "@angular/core";
       <p class="descuento">{{ textoDescuento() }}</p>
 
       @if (enStock()) {
-      <span class="badge stock">✅ En Stock</span>
+        <span class="badge stock">✅ En Stock</span>
       } @else {
-      <span class="badge sin-stock">❌ Agotado</span>
+        <span class="badge sin-stock">❌ Agotado</span>
       }
     </div>
   `,
@@ -2407,7 +2395,7 @@ import { TarjetaProductoComponent } from "./tarjeta-producto.component";
 
       <div class="grid">
         @for (producto of productos(); track producto.id) {
-        <app-tarjeta-producto [nombre]="producto.nombre" [precio]="producto.precio" [imagen]="producto.imagen" [enStock]="producto.enStock" [descuento]="producto.descuento"> </app-tarjeta-producto>
+          <app-tarjeta-producto [nombre]="producto.nombre" [precio]="producto.precio" [imagen]="producto.imagen" [enStock]="producto.enStock" [descuento]="producto.descuento"> </app-tarjeta-producto>
         }
       </div>
     </div>
@@ -2680,13 +2668,13 @@ interface Producto {
       </div>
 
       @for (producto of productosFiltrados(); track producto.id) {
-      <div class="producto">
-        <h4>{{ producto.nombre }}</h4>
-        <p>Categoría: {{ producto.categoría }}</p>
-        <p class="precio">\${{ producto.precio }}</p>
-      </div>
+        <div class="producto">
+          <h4>{{ producto.nombre }}</h4>
+          <p>Categoría: {{ producto.categoría }}</p>
+          <p class="precio">\${{ producto.precio }}</p>
+        </div>
       } @empty {
-      <p class="vacio">No hay productos que coincidan con los filtros</p>
+        <p class="vacio">No hay productos que coincidan con los filtros</p>
       }
     </div>
   `,

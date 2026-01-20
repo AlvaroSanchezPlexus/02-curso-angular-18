@@ -1,5 +1,11 @@
-import { Component, signal, WritableSignal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+
+export interface User {
+  nombre: string;
+  email: string;
+  password: string;
+}
 
 @Component({
   selector: 'app-registro',
@@ -9,19 +15,50 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './registro.component.scss',
 })
 export class RegistroComponent {
-  public nombre: WritableSignal<string> = signal('');
-  public email: WritableSignal<string> = signal('');
-  public password: WritableSignal<string> = signal('');
+  private readonly _emptyUser: User = {
+    nombre: '',
+    email: '',
+    password: '',
+  };
+
+  public formImput = [
+    {
+      label: 'Nombre completo',
+      field: 'nombre',
+      type: 'text',
+    },
+    {
+      label: 'Correo electrónico',
+      field: 'email',
+      type: 'email',
+    },
+    {
+      label: 'Contraseña',
+      field: 'password',
+      type: 'password',
+    },
+  ];
+
+  public user = signal<User>(this._emptyUser);
 
   public handleLimpiar(): void {
-    this.nombre.set('');
-    this.email.set('');
-    this.password.set('');
+    this.user.set(this._emptyUser);
   }
 
   public esFormularioCompleto(): boolean {
     return (
-      this.nombre() !== '' && this.email() !== '' && this.password() !== ''
+      this.user()?.nombre !== '' &&
+      this.user()?.email !== '' &&
+      this.user()?.password !== ''
     );
+  }
+
+  public updateUserField(field: string, event: Event): void {
+    const value = (event.target as HTMLInputElement).value;
+    this.user.update(currentUser => ({ ...currentUser, [field]: value }));
+  }
+
+  public valueFromUser(field: string): string {
+    return this.user()[field as keyof User];
   }
 }

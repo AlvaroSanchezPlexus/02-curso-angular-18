@@ -1,4 +1,4 @@
-import { Component, signal, WritableSignal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-temporizador',
@@ -8,11 +8,13 @@ import { Component, signal, WritableSignal } from '@angular/core';
   styleUrl: './temporizador.component.scss',
 })
 export class TemporizadorComponent {
-  public segundos: WritableSignal<number> = signal(0);
+  public segundos = signal(0);
   public idIntervalo: ReturnType<typeof setInterval> | null = null;
 
   public iniciar(): void {
-    if (this.idIntervalo !== null) return;
+    if (this.idIntervalo !== null) {
+      return;
+    }
 
     this.idIntervalo = setInterval(() => {
       this.segundos.update((s: number) => s + 1);

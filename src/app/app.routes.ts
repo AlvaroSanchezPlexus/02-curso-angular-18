@@ -15,6 +15,10 @@ import { RegistroComponent } from './components/registro/registro.component';
 import { FavoritosComponent } from './components/favoritos/favoritos.component';
 import { ConfiguracionComponent } from './components/configuracion/configuracion.component';
 import { TemporizadorComponent } from './components/temporizador/temporizador.component';
+import { ConversorMonedasComponent } from './components/conversor-monedas/conversor-monedas.component';
+import { DashboardMetricasComponent } from './components/dashboard-metricas/dashboard-metricas.component';
+import { FiltroProductosComponent } from './components/filtro-productos/filtro-productos.component';
+import { TemporizadorPomodoroComponent } from './components/temporizador-pomodoro/temporizador-pomodoro.component';
 
 export const routes: Routes = [
   { path: 'calculadora', component: CalculadoraComponent },
@@ -33,5 +37,9 @@ export const routes: Routes = [
   { path: 'favoritos', component: FavoritosComponent },
   { path: 'configuracion', component: ConfiguracionComponent },
   { path: 'temporizador', component: TemporizadorComponent },
+  { path: 'conversor-monedas', component: ConversorMonedasComponent },
+  { path: 'dashboard-metricas', component: DashboardMetricasComponent },
+  { path: 'filtro-productos', component: FiltroProductosComponent },
+  { path: 'temporizador-pomodoro', component: TemporizadorPomodoroComponent },
   { path: '', redirectTo: 'calculadora', pathMatch: 'full' },
 ];

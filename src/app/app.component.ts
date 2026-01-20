@@ -86,5 +86,25 @@ export class AppComponent {
       desc: 'Temporizador con ciclo de vida de componentes',
       ruta: '/temporizador',
     },
+    {
+      titulo: 'Ejercicio 17',
+      desc: 'Conversor de monedas con servicios',
+      ruta: '/conversor-monedas',
+    },
+    {
+      titulo: 'Ejercicio 18',
+      desc: 'Dashboard de métricas',
+      ruta: '/dashboard-metricas',
+    },
+    {
+      titulo: 'Ejercicio 19',
+      desc: 'Filtro de productos',
+      ruta: '/filtro-productos',
+    },
+    {
+      titulo: 'Ejercicio 20',
+      desc: 'Temporizador Pomodoro',
+      ruta: '/temporizador-pomodoro',
+    },
   ];
 }

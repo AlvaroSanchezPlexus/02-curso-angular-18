@@ -1,0 +1,33 @@
+<div class="tarjeta-conversor">
+  <header>
+    <h2>Conversor de Divisas</h2>
+    <p>Actualización en tiempo real mediante Signals</p>
+  </header>
+
+  <div class="cuerpo">
+    <div class="grupo-entrada">
+      <label for="usd">Monto en Dólares (USD)</label>
+      <input
+        id="usd"
+        type="number"
+        [value]="montoUsd()"
+        (input)="actualizarMonto($event)"
+        placeholder="Introduce monto..." />
+    </div>
+
+    <div class="rejilla-conversiones">
+      <div class="item-moneda">
+        <span class="siglas">EUR</span>
+        <span class="valor">{{ eur() | number: '1.2-2' }} €</span>
+      </div>
+      <div class="item-moneda">
+        <span class="siglas">GBP</span>
+        <span class="valor">{{ gbp() | number: '1.2-2' }} £</span>
+      </div>
+      <div class="item-moneda">
+        <span class="siglas">JPY</span>
+        <span class="valor">{{ jpy() | number: '1.0-0' }} ¥</span>
+      </div>
+    </div>
+  </div>
+</div>

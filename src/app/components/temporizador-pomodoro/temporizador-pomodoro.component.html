@@ -1,0 +1,15 @@
+<div class="pomodoro-wrapper">
+  <div class="reloj-visual" [class.corriendo]="activo()">
+    <div class="circulo-progreso">
+      <div class="tiempo">{{ tiempoFormateado() }}</div>
+      <div class="estado">{{ activo() ? 'EN SESIÓN' : 'PAUSADO' }}</div>
+    </div>
+  </div>
+
+  <div class="controles-pomodoro">
+    <button (click)="alternar()" [class.btn-pausa]="activo()">
+      {{ activo() ? 'Pausar' : 'Iniciar' }}
+    </button>
+    <button class="btn-reset" (click)="reiniciar()">Reiniciar</button>
+  </div>
+</div>

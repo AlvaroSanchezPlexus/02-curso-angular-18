@@ -1,0 +1,39 @@
+<div class="dashboard-container">
+  <h2>Dashboard de Ventas</h2>
+
+  <div class="metricas-grid">
+    <div class="card-metrica">
+      <span class="titulo">Total Ventas</span>
+      <span class="numero">{{ total() | currency: 'EUR' }}</span>
+    </div>
+    <div class="card-metrica">
+      <span class="titulo">Promedio</span>
+      <span class="numero">{{ promedio() | currency: 'EUR' }}</span>
+    </div>
+    <div class="card-metrica">
+      <span class="titulo">Venta Máxima</span>
+      <span class="numero">{{ maximo() | currency: 'EUR' }}</span>
+    </div>
+  </div>
+
+  <div class="acciones">
+    <input #nuevaVenta type="number" placeholder="Monto de venta..." />
+    <button class="btn-add" (click)="agregarVenta(nuevaVenta)">
+      Registrar Venta
+    </button>
+    <button class="btn-clear" (click)="borrarHistorial()">Limpiar</button>
+  </div>
+
+  <div class="listado">
+    <h3>Historial Reciente</h3>
+    <ul>
+      @for (v of ventas(); track $index) {
+        <li>
+          Venta #{{ $index + 1 }}: <strong>{{ v | currency: 'EUR' }}</strong>
+        </li>
+      } @empty {
+        <p class="empty-msg">No hay ventas registradas.</p>
+      }
+    </ul>
+  </div>
+</div>

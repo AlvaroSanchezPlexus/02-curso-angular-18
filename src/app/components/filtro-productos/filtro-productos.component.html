@@ -1,0 +1,34 @@
+<div class="contenedor-filtro">
+  <div class="barra-herramientas">
+    <div class="control">
+      <label>Categoría</label>
+      <select (change)="actualizarFiltro('categoria', $event)">
+        <option value="Todos">Todos</option>
+        <option value="Tecnología">Tecnología</option>
+        <option value="Muebles">Muebles</option>
+      </select>
+    </div>
+
+    <div class="control">
+      <label>Precio Mínimo</label>
+      <input
+        type="number"
+        (input)="actualizarFiltro('precioMin', $event)"
+        placeholder="0" />
+    </div>
+  </div>
+
+  <div class="grid-productos">
+    @for (p of productosFiltrados(); track p.id) {
+      <div class="producto-item">
+        <div class="categoria-tag">{{ p.categoria }}</div>
+        <h4>{{ p.nombre }}</h4>
+        <div class="precio">{{ p.precio | currency: 'EUR' }}</div>
+      </div>
+    } @empty {
+      <div class="no-resultados">
+        No hay productos que coincidan con la búsqueda.
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,82 @@
+.dashboard-container {
+    padding: 1.5rem;
+
+    .metricas-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+
+        .card-metrica {
+            background: var(--primary);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+
+            .titulo {
+                font-size: 0.8rem;
+                opacity: 0.9;
+            }
+
+            .numero {
+                font-size: 1.5rem;
+                font-weight: 800;
+                margin-top: 0.5rem;
+            }
+        }
+    }
+
+    .acciones {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 2rem;
+
+        input {
+            flex: 1;
+            padding: 0.8rem;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+        }
+
+        button {
+            padding: 0.8rem 1.5rem;
+            border-radius: 10px;
+            cursor: pointer;
+            border: none;
+            font-weight: 600;
+        }
+
+        .btn-add {
+            background: var(--text-main);
+            color: var(--bg-card);
+        }
+
+        .btn-clear {
+            background: #fee2e2;
+            color: #ef4444;
+        }
+    }
+
+    .listado {
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: 16px;
+        padding: 1.5rem;
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid var(--border-color);
+
+            &:last-child {
+                border: 0;
+            }
+        }
+    }
+}

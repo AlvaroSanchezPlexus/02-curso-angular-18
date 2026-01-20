@@ -1,0 +1,66 @@
+.contenedor-filtro {
+    .barra-herramientas {
+        display: flex;
+        gap: 2rem;
+        background: var(--bg-app);
+        padding: 1.5rem;
+        border-radius: 12px;
+        margin-bottom: 2rem;
+
+        .control {
+            display: flex;
+            flex-direction: column;
+
+            label {
+                font-size: 0.8rem;
+                font-weight: 700;
+                margin-bottom: 0.5rem;
+                color: var(--text-muted);
+            }
+
+            select,
+            input {
+                padding: 0.6rem;
+                border-radius: 8px;
+                border: 1px solid var(--border-color);
+                width: 180px;
+            }
+        }
+    }
+
+    .grid-productos {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1.5rem;
+
+        .producto-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            border-radius: 16px;
+            position: relative;
+
+            .categoria-tag {
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+                font-size: 0.7rem;
+                background: var(--primary);
+                color: white;
+                padding: 2px 8px;
+                border-radius: 20px;
+            }
+
+            h4 {
+                margin: 1rem 0 0.5rem;
+                color: var(--text-main);
+            }
+
+            .precio {
+                font-size: 1.2rem;
+                font-weight: 800;
+                color: var(--primary);
+            }
+        }
+    }
+}

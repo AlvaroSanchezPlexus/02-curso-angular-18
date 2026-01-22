@@ -106,5 +106,15 @@ export class AppComponent {
       desc: 'Temporizador Pomodoro',
       ruta: '/temporizador-pomodoro',
     },
+    {
+      titulo: 'Ejercicio 21',
+      desc: 'Formulario de registro avanzado',
+      ruta: '/formulario-registro',
+    },
+    {
+      titulo: 'Ejercicio 22',
+      desc: 'Encuesta interactiva',
+      ruta: '/encuesta',
+    },
   ];
 }

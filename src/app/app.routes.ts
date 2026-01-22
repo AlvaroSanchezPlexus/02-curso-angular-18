@@ -1,24 +1,26 @@
 import { Routes } from '@angular/router';
-import { CalculadoraComponent } from './components/calculadora/calculadora.component';
-import { ListaComponent } from './components/lista/lista.component';
-import { ColoresComponent } from './components/colores/colores.component';
-import { ContadorComponent } from './components/contador/contador.component';
-import { MensajesComponent } from './components/mensajes/mensajes.component';
-import { ListaCompraComponent } from './components/lista-compra/lista-compra.component';
-import { ModoComponent } from './components/modo/modo.component';
-import { GaleriaFiltroComponent } from './components/galeria-filtro/galeria-filtro.component';
-import { ContadorInteractivoComponent } from './components/contador-interactivo/contador-interactivo.component';
+import { CalculadoraComponent } from './components/01-calculadora/calculadora.component';
+import { ListaComponent } from './components/02-lista/lista.component';
+import { ColoresComponent } from './components/03-colores/colores.component';
+import { ContadorComponent } from './components/04-contador/contador.component';
+import { MensajesComponent } from './components/05-mensajes/mensajes.component';
+import { ListaCompraComponent } from './components/06-lista-compra/lista-compra.component';
+import { ModoComponent } from './components/07-modo/modo.component';
+import { GaleriaFiltroComponent } from './components/08-galeria-filtro/galeria-filtro.component';
+import { ContadorInteractivoComponent } from './components/09-contador-interactivo/contador-interactivo.component';
 import { CatalogoProductosComponent } from './components/catalogo-productos/catalogo-productos.component';
-import { ValidadorComponent } from './components/validador/validador.component';
-import { MenuContextualComponent } from './components/menu-contextual/menu-contextual.component';
-import { RegistroComponent } from './components/registro/registro.component';
-import { FavoritosComponent } from './components/favoritos/favoritos.component';
-import { ConfiguracionComponent } from './components/configuracion/configuracion.component';
-import { TemporizadorComponent } from './components/temporizador/temporizador.component';
-import { ConversorMonedasComponent } from './components/conversor-monedas/conversor-monedas.component';
-import { DashboardMetricasComponent } from './components/dashboard-metricas/dashboard-metricas.component';
-import { FiltroProductosComponent } from './components/filtro-productos/filtro-productos.component';
-import { TemporizadorPomodoroComponent } from './components/temporizador-pomodoro/temporizador-pomodoro.component';
+import { ValidadorComponent } from './components/11-validador/validador.component';
+import { MenuContextualComponent } from './components/12-menu-contextual/menu-contextual.component';
+import { RegistroComponent } from './components/13-registro/registro.component';
+import { FavoritosComponent } from './components/14-favoritos/favoritos.component';
+import { ConfiguracionComponent } from './components/15-configuracion/configuracion.component';
+import { TemporizadorComponent } from './components/16-temporizador/temporizador.component';
+import { ConversorMonedasComponent } from './components/17-conversor-monedas/conversor-monedas.component';
+import { DashboardMetricasComponent } from './components/18-dashboard-metricas/dashboard-metricas.component';
+import { FiltroProductosComponent } from './components/19-filtro-productos/filtro-productos.component';
+import { TemporizadorPomodoroComponent } from './components/20-temporizador-pomodoro/temporizador-pomodoro.component';
+import { FormularioRegistroComponent } from './components/21-formulario-registro/formulario-registro.component';
+import { EncuestaComponent } from './components/22-encuesta/encuesta.component';
 
 export const routes: Routes = [
   { path: 'calculadora', component: CalculadoraComponent },
@@ -41,5 +43,7 @@ export const routes: Routes = [
   { path: 'dashboard-metricas', component: DashboardMetricasComponent },
   { path: 'filtro-productos', component: FiltroProductosComponent },
   { path: 'temporizador-pomodoro', component: TemporizadorPomodoroComponent },
+  { path: 'formulario-registro', component: FormularioRegistroComponent },
+  { path: 'encuesta', component: EncuestaComponent },
   { path: '', redirectTo: 'calculadora', pathMatch: 'full' },
 ];

@@ -1,0 +1,47 @@
+<section class="form-encuesta">
+  <h2>Nueva Encuesta</h2>
+
+  <form [formGroup]="formEncuesta" (ngSubmit)="guardar()">
+    <input
+      type="text"
+      class="titulo-input"
+      formControlName="tituloEncuesta"
+      placeholder="Escribe el título de tu encuesta..." />
+
+    <div class="preguntas-container" formArrayName="preguntas">
+      @for (pregunta of preguntas.controls; track $index) {
+        <div class="pregunta-item" [formGroupName]="$index">
+          <input
+            type="text"
+            formControlName="texto"
+            [placeholder]="'Pregunta #' + ($index + 1)" />
+
+          <button
+            type="button"
+            class="btn-remove"
+            (click)="eliminarPregunta($index)"
+            title="Eliminar pregunta">
+            ✕
+          </button>
+        </div>
+      } @empty {
+        <p style="text-align: center; color: #999">
+          No hay preguntas añadidas aún.
+        </p>
+      }
+    </div>
+
+    <footer class="actions-footer">
+      <button type="button" class="btn-add" (click)="agregarPregunta()">
+        + Añadir Pregunta
+      </button>
+
+      <button
+        type="submit"
+        class="btn-save"
+        [disabled]="formEncuesta.invalid || preguntas.length === 0">
+        Guardar Encuesta
+      </button>
+    </footer>
+  </form>
+</section>

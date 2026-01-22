@@ -9,14 +9,22 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './calculadora.component.scss',
 })
 export class CalculadoraComponent {
-  num1 = 0;
-  num2 = 0;
-  resultado = 0;
+  public num1 = 0;
+  public num2 = 0;
+  public resultado = 0;
 
-  operar(tipo: string) {
-    if (tipo === '+') this.resultado = this.num1 + this.num2;
-    if (tipo === '-') this.resultado = this.num1 - this.num2;
-    if (tipo === '*') this.resultado = this.num1 * this.num2;
-    if (tipo === '/') this.resultado = this.num1 / this.num2;
+  public operar(tipo: string): void {
+    if (tipo === '+') {
+      this.resultado = this.num1 + this.num2;
+    }
+    if (tipo === '-') {
+      this.resultado = this.num1 - this.num2;
+    }
+    if (tipo === '*') {
+      this.resultado = this.num1 * this.num2;
+    }
+    if (tipo === '/') {
+      this.resultado = this.num1 / this.num2;
+    }
   }
 }
